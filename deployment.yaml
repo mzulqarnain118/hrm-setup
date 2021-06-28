@@ -15,3 +15,46 @@ spec:
   selector:
     matchLabels:
 ontend
+  template:
+    metadata:
+      labels:
+        app: iq-frontend
+    spec:
+      containers:
+      - image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/iq-${BRANCH}/iq-frontend:latest
+        imagePullPolicy: Always
+        name: iq-frontend
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        resources:
+          limits:
+            memory: 1024Mi
+            cpu: 1000m
+          requests:
+            memory: 128Mi
+            cpu: 50m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iq-frontend
+  namespace: iq-${BRANCH}
+  labels:
+    app: iq-frontend
+rt: 80
+    targetPort: 80
+    name: http
+  selector:
+    app: iq-frontend
