@@ -4,3 +4,4 @@ export default interface ZoomActions {
     // this is a function that adds and removes layers
     add: () => void;
     currentLevel: string;
+  }
