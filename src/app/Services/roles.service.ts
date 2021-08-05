@@ -28,3 +28,23 @@ export class RoleService {
     }
     return rolesData.some((res) =>
 werCase()
+        .includes(
+          roleType === 'platfrom_name'
+            ? res.platform_name.toLowerCase()
+            : res.product_name.toLowerCase(),
+        ),
+    );
+  }
+
+  isActive(item: string | null): boolean {
+    const activeMenu = this.sharedService.menu.value ?? 'dashboard'; // Handle null/undefined
+    return activeMenu === item;
+  }
+
+  updateRoles(items: roles[]) {
+    this.roles.next(items);
+  }
+
+  isEsurvey() {
+    return this.roles$.pipe(
+      map((res) => res.some((value) => value.product_name.toLowerCase() === 'esurvey'))
