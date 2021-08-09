@@ -30,3 +30,37 @@ export class SearchService {
     map: mapboxgl.Map,
     name: string
 'Coordinate') {
+      this.searchByCoordinate(query, map);
+    } else if (searchOption === 'Field ID') {
+      this.searchBySurveyId(query, map, name);
+    }
+  }
+
+  searchByCoordinate(query: string, map: mapboxgl.Map) {
+    if (!this.isValidCoordinateFormat(query)) {
+      alert('Invalid coordinate format');
+      return;
+    }
+
+    // Extract the longitude and latitude from the query
+    const coords = query.split(',').map((coord) => parseFloat(coord.trim()));
+    const [latitude, longitude] = coords;
+
+    // Add a marker and fly to the location
+    this.addMarker(longitude, latitude, map);
+    map.flyTo({
+      center: [longitude, latitude],
+      essential: true,
+      zoom: 15,
+    });
+  }
+
+  // called Field ID now
+  searchBySurveyId(query: string, map: mapboxgl.Map, TilesetId: string) {
+    const result = map.queryRenderedFeatures(undefined, {
+      layers: ['polygons-line' + TilesetId],
+      filter: ['==', SurveyId_Query_key, query],
+    });
+    if (result.length === 0) {
+
+ whole AOI is visible or Field ID is valid');
