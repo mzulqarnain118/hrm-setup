@@ -64,3 +64,13 @@ export class SearchService {
     if (result.length === 0) {
 
  whole AOI is visible or Field ID is valid');
+      return;
+    }
+
+    // get center
+    const center = UtilityService.calculateCenterForPolygon(result[0]);
+    const feature = result[0];
+    map.flyTo({
+      center: center,
+      zoom: 15,
+   // to be changed into a function that adds a line layer
