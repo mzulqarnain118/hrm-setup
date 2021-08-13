@@ -74,3 +74,28 @@ export class SearchService {
       center: center,
       zoom: 15,
    // to be changed into a function that adds a line layer
+    map.addLayer({
+      id: 'highlighted-polygon',
+      type: 'line',
+      source: {
+        type: 'geojson',
+        data: feature,
+      },
+      paint: {
+        'line-color': '#f00',
+        'line-width': 2,
+      },
+    });
+  }
+
+  registerListeners(map: mapboxgl.Map) {
+    this.map = map;
+  }
+
+  isValidCoordinateFormat(query: string) {
+    const regex: RegExp = /^\-?\d+(\.\d+)?,\-?\d+(\.\d+)?$/;
+    return regex.test(query);
+  }
+  instantiateGeocoder(map: mapboxgl.Map) {
+    this.registerListeners(map);
+e: number, latitude: number, map: mapboxgl.Map) {
