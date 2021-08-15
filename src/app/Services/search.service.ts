@@ -99,3 +99,49 @@ export class SearchService {
   instantiateGeocoder(map: mapboxgl.Map) {
     this.registerListeners(map);
 e: number, latitude: number, map: mapboxgl.Map) {
+    const el = document.createElement('div');
+    el.className = 'marker';
+    this.marker = new mapboxgl.Marker(el)
+      .setLngLat([longitude, latitude])
+      .addTo(map);
+  }
+
+  removeMarker() {
+    if (!this.marker) {
+      return;
+    }
+    this.marker.remove();
+    this.marker = null;
+  }
+
+  resetSearchZoom(
+    searchOption: string,
+    map: mapboxgl.Map,
+    center: mapboxgl.LngLat
+  ) {
+    const zoom =
+      this.zoomFlyBacks[searchOption as keyof typeof this.zoomFlyBacks];
+
+    if (map.getSource('highlighted-polygon')) {
+      map
+        .removeLayer('highlighted-polygon')
+        .removeSource('highlighted-polygon');
+    }
+    if (!zoom) {
+      console.error('Zoom not found');
+      return;
+    }
+
+    this.removeMarker();
+    map.flyTo({
+      center: center,
+      zoom: zoom,
+    });
+  }
+  addEventsToMarker(map: mapboxgl.Map) {
+    if (!this.marker) {
+ment().addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+}
