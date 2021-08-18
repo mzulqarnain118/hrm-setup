@@ -34,3 +34,27 @@ export class SharedStateService {
   public loaderSubject = new BehaviorSubject<boolean>(true);
   loader$ = this.loaderSubject.asObservable();
 orSubject<boolean>(false);
+  isDialogOpen$ = this.isDialogOpen.asObservable();
+
+  table2data = new BehaviorSubject<Object>({});
+  table2data$ = this.table2data.asObservable();
+
+  public menu = new BehaviorSubject<string>('dashboard');
+  menu$ = this.menu.asObservable();
+
+  private ReportTypeSubject = new Subject<string>();
+  ReportType$ = this.ReportTypeSubject.asObservable();
+
+  private currentReport: string = '';
+  private currentDate = new BehaviorSubject<string>('');
+  currentDate$ = this.currentDate.asObservable().pipe();
+
+  private isCollapse = new BehaviorSubject<boolean>(false);
+  isCollapse$ = this.isCollapse.asObservable().pipe();
+  // fix these
+  currentCropName: string = '';
+  private currentCrop = new ReplaySubject<string>(1);
+  currentCrop$ = this.currentCrop.asObservable();
+
+  currentBoundarySource = new BehaviorSubject<string>('aoi');
+ = this.currentBoundarySource
