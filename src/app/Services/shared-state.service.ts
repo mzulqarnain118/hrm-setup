@@ -58,3 +58,7 @@ orSubject<boolean>(false);
 
   currentBoundarySource = new BehaviorSubject<string>('aoi');
  = this.currentBoundarySource
+    .asObservable()
+    .pipe(distinctUntilChanged());
+
+nstructor(private router: Router) {
