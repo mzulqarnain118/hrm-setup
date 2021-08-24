@@ -62,3 +62,12 @@ orSubject<boolean>(false);
     .pipe(distinctUntilChanged());
 
 nstructor(private router: Router) {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((res: any) => {
+        this.updateMenu(res['url'].split('/')[1]);
+      });
+
+    this.isEsurveyVisible = false;
+    this.ReportType$.subscribe((reportType) => {
+s.currentReport = reportType;
