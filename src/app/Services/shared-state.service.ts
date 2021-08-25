@@ -71,3 +71,39 @@ nstructor(private router: Router) {
     this.isEsurveyVisible = false;
     this.ReportType$.subscribe((reportType) => {
 s.currentReport = reportType;
+    });
+    this.currentCrop$.subscribe((crop) => {
+      this.currentCropName = crop;
+    });
+  }
+
+  changeEsurveyVisibility(bool: boolean) {
+    this.isEsurveyVisible = bool;
+  }
+
+  updatedCombinedTilesetNames(names: string) {
+    this.combinedTilesetNames = names;
+  }
+
+  updateClickedBoundaryId(id: string) {
+    this.clickedBoundaryId?.next(id);
+  }
+  updateClickedBoundaryName(name: string) {
+    this.clickedBoundaryName.next(name);
+  }
+  updateCurrentSeason(season: string) {
+    this.currentSeason.next(season);
+  }
+  updateCurrentDate(date: string) {
+    this.currentDate.next(date);
+  }
+  updateCurrentCrop(crop: string) {
+    this.currentCrop.next(crop);
+  }
+  updateIsDialogOpen(dialog: boolean) {
+    this.isDialogOpen.next(dialog);
+  }
+  // Function to update the value of zoom level
+  // So the other services dont update value directly
+  updateCurrentBoundary(newZoomLevel: string) {
+newZoomLevel);
