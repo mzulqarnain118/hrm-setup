@@ -114,3 +114,42 @@ newZoomLevel);
   }
 
 edIsCollapse(collapse: boolean) {
+    this.isCollapse.next(collapse);
+  }
+
+  updateTable2Data(data: any) {
+    this.table2data.next(data);
+  }
+
+  getCurrentSeasonValue() {
+    return this.currentSeason.getValue();
+  }
+  getCurrentCropValue() {
+    return this.currentCropName;
+  }
+  getClickedBoundaryIdValue() {
+    return this.clickedBoundaryId.getValue();
+  }
+  getClickedBoundaryNameValue() {
+    return this.clickedBoundaryName.getValue();
+  }
+() {
+    return this.currentReport;
+  }
+
+  getCurrentDateValue() {
+    return this.currentDate.value.split('T')[0];
+  }
+
+  emitReportType(reportType: string) {
+    this.ReportTypeSubject.next(reportType);
+  }
+
+  updateMenu(menu: string) {
+    this.menu.next(menu);
+  }
+
+  updateLoader(value: boolean) {
+    this.loaderSubject.next(value);
+  }
+}
