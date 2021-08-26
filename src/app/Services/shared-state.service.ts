@@ -107,3 +107,10 @@ s.currentReport = reportType;
   // So the other services dont update value directly
   updateCurrentBoundary(newZoomLevel: string) {
 newZoomLevel);
+  }
+
+  updateUsername(username: string) {
+    this.usernameSubject.next(username);
+  }
+
+edIsCollapse(collapse: boolean) {
