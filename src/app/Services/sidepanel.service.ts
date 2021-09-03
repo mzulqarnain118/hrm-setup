@@ -12,7 +12,7 @@ import {
   throwError,
 } from 'rxjs';
 import { MapService } from './map.service';
-LT_REPORT } from 'src/assets/constants/constants';
+import { DEFAULT_REPORT } from 'src/assets/constants/constants';
 import { SharedStateService } from './shared-state.service';
 @Injectable({
   providedIn: 'root',
@@ -44,7 +44,8 @@ export class SidepanelService {
     // this.ReportType$.subscribe((reportType) => {
     //   this.SharedStateService.updateReportType(reportType);
     // });
-SharedStateService.ReportType$;
+
+    // this.ReportType$ = this.SharedStateService.ReportType$;
     this.ReportType$ = this.SharedStateService.ReportType$;
     this.clickedBoundaryName$ = this.SharedStateService.clickedBoundaryName$;
     this.currentBoundarySource$ =
