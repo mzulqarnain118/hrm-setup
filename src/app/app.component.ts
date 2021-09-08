@@ -10,3 +10,4 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 }
+import { Component, inject, OnInit } from '@angular/core';
