@@ -30,3 +30,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./yieldpro/yieldpro.module').then((m) => m.YieldproModule),
 KEN, authGuard],
+    data: { roles: ['yieldpro'] },
+  },
+  {
