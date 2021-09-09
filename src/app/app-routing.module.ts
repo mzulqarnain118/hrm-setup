@@ -33,3 +33,22 @@ KEN, authGuard],
     data: { roles: ['yieldpro'] },
   },
   {
+path: 'console',
+    loadChildren: () =>
+      import('./console/console.module').then((m) => m.ConsoleModule),
+    canActivate: [ROLE_GUARD_TOKEN, authGuard],
+    data: { roles: ['console'] },
+  },
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+    DashboardModule,
+    CropscanModule,
+    YieldproModule,
+    ConsoleModule
+  ],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
