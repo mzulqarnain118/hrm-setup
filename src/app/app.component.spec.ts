@@ -24,3 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
 ure.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.content span')?.textContent).toContain('B2B-Portal app is running!');
+  });
+});
