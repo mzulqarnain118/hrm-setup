@@ -1,1 +1,38 @@
 /* Global Styles & Custom Properties */
+:root {
+  --primary-bg-color: rgb(238, 240, 241);
+  --secondary-bg-color: #f0f2f7;
+  --primary-text-color: #e1e5eb;
+  --secondary-text-color: #e71b1b;
+  --border-color: #eee2e2;
+  --hover-border-color: #1BC693;
+  --font-family: "Roboto", sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+  padding: 2px;
+}
+
+.dropdown-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  min-width: 12vh;
+  color: var(--primary-text-color);
+}
+
+.dropdown-container:last-child {
+  margin-right: 0;
+  margin-left: 2vh;
+  min-width: 11vh;
+}
+ize: 14px;
