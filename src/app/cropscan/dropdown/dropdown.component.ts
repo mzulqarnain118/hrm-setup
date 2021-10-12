@@ -105,3 +105,4 @@ ent.target as HTMLSelectElement;
     );
   }
 }
+import { Component } from '@angular/core';
