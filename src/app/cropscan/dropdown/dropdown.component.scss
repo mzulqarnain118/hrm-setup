@@ -47,3 +47,16 @@ ropdown-container select {
   border-color: #1BC693;
   color: #1BC693;
 -radius: 8px;
+  cursor: pointer;
+  padding-left: 10px;
+  transition: border-color 0.3s;
+}
+.dropdown-label {
+  margin-right: 5px;
+-self: center;
+}
+
+.dropdown-container select:hover {
+  border-color: var(--hover-border-color);
+  background-color: #1BC693;
+  color: white;
