@@ -25,3 +25,24 @@ export interface DropdownData {}
     standalone: true,
     imports: [FormsModule, AsyncPipe],
 mponent {
+  // Selected value
+  currentSeason$ = new Observable<string>();
+  currentDate$ = new Observable<string>();
+  currentCrop$ = new Observable<string>();
+
+  // Options from backend
+  seasonsOptions$ = new Observable<string[]>();
+  cropOptions$ = new Observable<string[]>();
+  dateOptions$ = new Observable<string[]>();
+
+  combinedObservables$ = new Observable<string[]>();
+
+  constructor(
+    private apiService: ApiService,
+    private mapService: MapService,
+    private sidePanelService: SidepanelService,
+    private sharedStateService: SharedStateService
+  ) {}
+
+  ngOnInit(): void {
+t();
