@@ -154,3 +154,61 @@ export class DropdownComponent {
 
   ngOnInit(): void {
 combinedObservables$ = combineLatest([
+      this.currentCrop$.pipe(distinctUntilChanged()),
+      this.currentSeason$.pipe(distinctUntilChanged()),
+      this.sidePanelService.ReportType$,
+    ]);
+
+    this.combinedObservables$.pipe().subscribe((res) => {
+      // array destructuring
+      const [currentCrop, currentSeason, reportType] = res;
+      this.cropOptions$ = this.apiService
+        .getAllCrops(reportType)
+        .pipe(map((res) => res.data));
+      this.dateOptions$ = this.apiService
+        .getAllDates(currentCrop, currentSeason, reportType)
+        .pipe(map((res) => res.data));
+    });
+
+    this.sharedStateService.currentCrop$
+      .pipe(
+        tap(
+          (data) =>
+            (this.seasonsOptions$ = this.apiService
+              .getAllSeasons(data, this.sharedStateService.getReportTypeValue())
+              .pipe(map((res) => res.data)))
+        )
+      )
+      .subscribe();
+  }
+
+  // Function to handle the selection
+  onSeasonSelect(event: Event) {
+    const elem = event.target as HTMLSelectElement;
+    const selectedSeason = elem.value.split(':')[1].trim();
+
+    this.mapService.updateMapForNewSeason(selectedSeason);
+  }
+
+  onCropSelect(event: Event) {
+    const elem = event.target as HTMLSelectElement;
+    const selectedCrop = elem.value.split(':')[1].trim();
+
+    this.mapService.updateMapForNewCrop(selectedCrop);
+  }
+
+  onDateSelect(event: any) {
+    const elem = event.target as HTMLSelectElement;
+le.log('selected date ', selectedDate);
+    // send call to update the map
+    this.mapService.updateMapForNewDate(selectedDate,true);
+  }
+
+  defaultReport() {
+    this.currentCrop$ = this.sharedStateService.currentCrop$;
+    this.currentSeason$ = this.sharedStateService.currentSeason$;
+    this.currentDate$ = this.sharedStateService.currentDate$.pipe(
+      map((res) => res.split('T')[0])
+    );
+  }
+}
