@@ -46,3 +46,29 @@ mponent {
 
   ngOnInit(): void {
 t();
+
+    this.combinedObservables$ = combineLatest([
+      this.currentCrop$.pipe(distinctUntilChanged()),
+      this.currentSeason$.pipe(distinctUntilChanged()),
+      this.sidePanelService.ReportType$,
+    ]);
+
+    this.combinedObservables$.pipe().subscribe((res) => {
+      // array destructuring
+      const [currentCrop, currentSeason, reportType] = res;
+      this.cropOptions$ = this.apiService
+        .getAllCrops(reportType)
+        .pipe(map((res) => res.data));
+      this.dateOptions$ = this.apiService
+        .getAllDates(currentCrop, currentSeason, reportType)
+        .pipe(map((res) => res.data));
+    });
+
+    this.sharedStateService.currentCrop$
+      .pipe(
+        tap(
+          (data) =>
+            (this.seasonsOptions$ = this.apiService
+              .getAllSeasons(data, this.sharedStateService.getReportTypeValue())
+              .pipe(map((res) => res.data)))
+ubscribe();
