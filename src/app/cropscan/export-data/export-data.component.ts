@@ -48,3 +48,4 @@ aredStateService: SharedStateService
     return `${environment.BACKEND_URL}/api/survey/excel?survey_season=${season}&report_type_name=${reportType}&report_date=${date}&crop=${crop}`;
   }
 }
+import { Component, Renderer2 } from '@angular/core';
