@@ -23,3 +23,25 @@
   }
 </div>
 <div class="toggle-container">
+  <div class="header" (click)="toggleVisibility()">
+    <span class="caret" [ngClass]="{ rotated: !isVisible }"></span>
+ <span class="label">Map Key</span>
+  </div>
+  @if (isVisible) {
+    <div class="content">
+      @if (combinedTilesets$ | async; as tilesets) {
+        <div cdkDropList (cdkDropListDropped)="onDrop($event)">
+          @for (tileset of tilesets; track tileset) {
+            <div cdkDrag [cdkDragData]="tileset" class="cdr">
+              @if (tileset.name !== '') {
+                <app-toggle-switch
+                  [tileset]="tileset"
+                  (clickedEvent)="handleToggleChange($event)"
+                ></app-toggle-switch>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
