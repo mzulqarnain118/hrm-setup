@@ -19,3 +19,15 @@
     .caret {
       width: 0;
    border-left: 5px solid transparent; // Adjust size as required
+      border-right: 5px solid transparent; // Adjust size as required
+      border-top: 5px solid white; // Using the color you specified
+      display: inline-block;
+      transition: transform 0.3s ease;
+      color: white !important;
+
+      &.rotated {
+        transform: rotate(180deg);
+      }
+    }
+
+
