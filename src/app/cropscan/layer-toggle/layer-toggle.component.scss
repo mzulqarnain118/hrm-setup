@@ -31,3 +31,74 @@
     }
 
 
+      margin-left: 7px;
+      color: white;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+    gap: 1vh;
+    max-height: 9rem;
+    overflow-y: auto;
+  }
+}
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 5px;
+  .toggle-name {
+    margin-left: 10px; // Spacing between the switch and the name
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; // Adjusted for smaller size
+  height: 22px; // Adjusted for smaller size
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 18px; // Adjusted for smaller size
+      width: 18px; // Adjusted for smaller size
+      left: 2px; // Centering the toggle circle
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: #1BC693;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(18px); // Adjusted for smaller size
+  }
+}
+
+
+.cdr{
+  padding-bottom: 5px;
