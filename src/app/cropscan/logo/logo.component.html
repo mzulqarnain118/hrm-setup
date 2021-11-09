@@ -1,0 +1,7 @@
+<div class="logoContainer">
+  <img class="logoSize" [src]="imageUrl$ | async" alt="Image" (click)="toggleSignOut()">
+  @if (showSignOutMenu) {
+    <div class="signOutMenu">
+      <a href="#" (click)="showSignOut()">Logout</a>
+    </div>
+  }
