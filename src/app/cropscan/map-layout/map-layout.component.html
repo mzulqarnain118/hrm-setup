@@ -1,0 +1,22 @@
+<div class="TopContainer">
+  <app-navbar />
+
+  <div id="mainContainer" class="mainContainer">
+    <app-sidepanel
+      class="sidepanel"
+      [ngClass]="{ isOpen: sharedState.isCollapse$ | async }"
+      />
+    @if (sharedState.isCollapse$ | async) {
+      <div
+        class="icon"
+        (click)="collapseSideBar()"
+        >
+        <img src="../../../assets/images/openIcon.svg" />
+      </div>
+    }
+    <div class="loaderDiv">
+      <span [hidden]="!(sharedState.loader$ | async)" class="loader"></span>
+      <app-map [hidden]="sharedState.loader$ | async" class="mainmap" />
+    </div>
+  </div>
+</div>
