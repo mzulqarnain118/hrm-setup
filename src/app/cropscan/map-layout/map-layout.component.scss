@@ -56,3 +56,19 @@
     .mapboxgl-canvas {
       width: 100%;
 tion: absolute;
+  margin-top: 21%;
+  margin-left: 0%;
+  z-index: 1;
+  padding: 7px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 25px;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+//loader
+tion: relative;
