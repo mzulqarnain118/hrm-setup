@@ -218,3 +218,36 @@ img{
 }
 
 y: flex;
+  align-items: center;
+  right: 0;
+}
+// keep last chikld at let
+
+.btn-toggle {
+  position: relative;
+  /* Typography */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  min-height: 3.5vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #1BC693;
+  background-color: white;
+  border: 1px solid #1BC693;
+  border-radius: 8px; /* Slightly increased radius for a more rounded appearance */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+
+  /* Transition for smoother hover effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  
+}
+
+.btn-toggle:hover{
+  background-color: #1BC693;
+  color: white;
+}
+
+
+e;
