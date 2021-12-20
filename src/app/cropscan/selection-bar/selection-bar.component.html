@@ -1,0 +1,10 @@
+<label>Select Report</label>
+<div class="container dropdown-container">
+  <select (change)="handleSelection($event)">
+    @for (report of reportTypes$ | async; track report) {
+      <option [value]="report">
+        {{ report }}
+      </option>
+    }
+  </select>
+</div>
