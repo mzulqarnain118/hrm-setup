@@ -99,3 +99,18 @@ me$ = new Observable<string>();
               crop,
               this.reportType,
 rtDate,
+              this.currentBoundary,
+              this.limit,
+              this.offset,
+            ),
+          );
+
+          return memoizedObservable;
+        }),
+        filter((res) => !!res), // This line can be adjusted or removed based on your needs
+      )
+      .subscribe((res) => {
+        this.data.next(res.data);
+        this.maxCount = res.total;
+        this.cdr.detectChanges();
+this.clickBoundaryName$
