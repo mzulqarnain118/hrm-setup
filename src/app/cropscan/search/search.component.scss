@@ -16,3 +16,40 @@ osition: relative;
   border-color: transparent;
   color: #1BC693;
 olor: white;
+  border-radius: 8px;
+  width: 8rem;
+}
+
+:hover.search-container select{
+  color: white;
+  background-color: #1BC693;
+  cursor: pointer;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+nput {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  max-height: 3.5vh;
+  padding-left: 5px;
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #008cd8;
+}
+
+.line{
+  color: #1BC693;
+}
