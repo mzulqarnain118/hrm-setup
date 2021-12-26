@@ -114,3 +114,38 @@ rtDate,
         this.maxCount = res.total;
         this.cdr.detectChanges();
 this.clickBoundaryName$
+      .pipe(filter((boundaryName) => boundaryName != ''))
+      .subscribe((boundaryName) => {
+        // Get the current data array
+        const currentData = this.data.getValue();
+        this.boundrayName = boundaryName;
+        // Find the index of the boundary in the data array
+        const boundaryIndex = currentData.findIndex(
+          (item) => item['Boundary Name'] === boundaryName,
+        );
+
+        if (boundaryIndex > -1) {
+          const boundaryObj = currentData[boundaryIndex];
+          currentData.splice(boundaryIndex, 1);
+          currentData.unshift(boundaryObj);
+          this.data.next(currentData);
+        } else if (this.boundrayName) {
+          this.key = JSON.stringify({
+            reportType: this.reportType,
+            season: this.season,
+            reportDate: this.reportDate,
+            currentBoundary: this.currentBoundary,
+            limit: this.limit,
+            offset: this.offset,
+            boundrayName: this.boundrayName,
+          });
+          this.loadData();
+        }
+      });
+    this.checkEsurvey();
+  }
+
+  @HostListener('scroll', ['$event'])
+  onElementScroll($event: any) {
+    const scrollPosition = $event.target.scrollTop;
+s.prevScrollPosition &&
