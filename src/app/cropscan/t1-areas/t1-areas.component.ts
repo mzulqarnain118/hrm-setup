@@ -149,3 +149,90 @@ this.clickBoundaryName$
   onElementScroll($event: any) {
     const scrollPosition = $event.target.scrollTop;
 s.prevScrollPosition &&
+      this.data.getValue().length < this.maxCount
+    ) {
+      this.boundrayName = '';
+      this.offset += 1;
+
+      this.key = JSON.stringify({
+        reportType: this.reportType,
+        season: this.season,
+        reportDate: this.reportDate,
+        currentBoundary: this.currentBoundary,
+        limit: this.limit,
+        offset: this.offset,
+        boundrayName: this.boundrayName,
+      });
+      this.loadData();
+    }
+
+    this.prevScrollPosition = scrollPosition;
+  }
+
+  private loadData() {
+    this.memoizationService
+      .memoize(
+        this.key,
+        this.apiService.getT1Data(
+          this.crop,
+          this.reportType,
+          this.season,
+          this.reportDate,
+          this.currentBoundary,
+          this.limit,
+          this.offset,
+          this.boundrayName,
+        ),
+      )
+      .pipe(
+        map((newData) => newData.data),
+        distinctUntilChanged(),
+      )
+      .subscribe(async (newData) => {
+        const currentData = this.data.getValue();
+        const updatedData = [...newData, ...currentData];
+        const uniqueData = updatedData.reduce((accumulator, currentObj) => {
+          const existingObj = accumulator.find(
+            (obj: { id: any }) => obj.id === currentObj.id,
+          );
+
+          if (!existingObj) {
+   }
+
+          return accumulator;
+        }, []);
+        this.data.next(uniqueData);
+        if (this.boundrayName) await this.reload();
+        this.cdr.detectChanges();
+      });
+  }
+
+  private reload() {
+    this.clickBoundaryName$
+      .pipe(filter((boundaryName) => boundaryName != ''))
+      .subscribe((boundaryName) => {
+        const currentData = this.data.getValue();
+        this.boundrayName = boundaryName;
+        const boundaryIndex = currentData.findIndex(
+          (item) => item['Boundary Name'] === boundaryName,
+        );
+
+        if (boundaryIndex > -1) {
+          const boundaryObj = currentData[boundaryIndex];
+          currentData.splice(boundaryIndex, 1);
+          currentData.unshift(boundaryObj);
+          this.data.next(currentData);
+        }
+      });
+  }
+
+  checkEsurvey() {
+    this.roleService.isEsurvey().subscribe((res) => {
+      this.keysOrder = res
+        ? ['Boundary Name', 'Crop Area', 'Esurvey Area']
+        : ['Boundary Name', 'Crop Area'];
+    });
+  }
+
+  ngAfterViewInit() {}
+}
