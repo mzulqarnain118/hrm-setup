@@ -1,1 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* For smaller devices, adjust grid columns if needed */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(calc(50% - 10px), 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+
+label {
+  margin-left: 2rem;
+}
+
+.dropdown-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90%;
+  color: var(--primary-text-color);
+}
+
+th: 90%;
