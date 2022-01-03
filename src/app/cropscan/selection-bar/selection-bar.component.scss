@@ -33,3 +33,41 @@ label {
 }
 
 th: 90%;
+  min-width: 10vh;
+  height: 38px;
+  background: white;
+  border:1px solid #1BC693;
+  color: #1BC693;
+  border-radius: 8px;
+  cursor: pointer;
+  padding-left: 10px;
+  font-size: 17px;
+  padding-right: 5px;
+}
+
+.dropdown-container select:hover {
+  background-color: #1BC693;
+  border: 1px solid #1BC693;
+  color: white;
+}
+
+// select {
+//   -webkit-appearance: none;
+//   appearance: none;
+//   border: none;
+// }
+.dropdown-container {
+  position: relative;
+  border-radius: 2px;
+  padding: 5px;
+}
+ {
+//   content: "▼";
+//   font-size: 1rem;
+//   right: 33px;
+//   position: absolute;
+//   color: #1BC693;
+// }
+.rectangle {
+  width: 90%;
+}
