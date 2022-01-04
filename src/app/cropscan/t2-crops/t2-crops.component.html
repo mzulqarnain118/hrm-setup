@@ -1,0 +1,30 @@
+
+<h3>{{clickBoundaryName$|async}}</h3>
+@if (data$ | async; as data) {
+  <div  class="tableFixHead">
+    <table class="table-wrapper">
+      <!-- Headers -->
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Class</th>
+          <th>Acres</th>
+        </tr>
+      </thead>
+      <!-- Data Rows -->
+      <tbody>
+        @for (obj of data | keyvalue; track obj; let i = $index) {
+          <tr (click)="isDialogOpen(obj.value)">
+            <td>
+              <div class="circle" [style.background-color]="getColorForKey(obj.key)">
+                <span>{{i+1}}</span>
+              </div>
+            </td>
+            <td>{{ obj.key | addCommas }}</td>
+            <td>{{ obj.value  | addCommas}}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}
