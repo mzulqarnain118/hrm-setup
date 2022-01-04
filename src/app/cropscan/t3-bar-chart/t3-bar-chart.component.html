@@ -1,0 +1,15 @@
+<div class="graph">
+  @if (isDataAvailable) {
+    <div
+      class="bar-chart-container"
+      [style.height]="getChartHeight()"
+      >
+      <ngx-charts-bar-horizontal-normalized
+        [customColors]="colorMap"
+        [results]="multi"
+        [yAxis]="showYAxis"
+        (select)="onSelect($event)"
+        #chart>
+      </ngx-charts-bar-horizontal-normalized>
+    </div>
+  }
