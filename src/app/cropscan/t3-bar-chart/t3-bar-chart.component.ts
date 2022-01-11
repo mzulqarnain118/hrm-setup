@@ -40,3 +40,10 @@ export class T3BarChartComponent implements OnInit {
     private apiService: ApiService,
     private sharedStateService: SharedStateService,
 rivate memoizationService: MemoizationService
+  ) {}
+
+  ngOnInit(): void {
+    this.sidepanelService.combinedData$
+      .pipe(
+        debounceTime(100),
+ filter((res) => res.every((element) => element !== '')),
