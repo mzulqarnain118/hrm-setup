@@ -47,3 +47,23 @@ rivate memoizationService: MemoizationService
       .pipe(
         debounceTime(100),
  filter((res) => res.every((element) => element !== '')),
+        filter(() => this.sharedStateService.TableEmissions),
+        switchMap((res) => {
+          const [crop,reportType, season, reportDate, currentBoundary] = res;
+          this.crop=crop;
+          this.reportType = reportType;
+          this.season = season;
+          this.reportDate = reportDate;
+          this.currentBoundary = currentBoundary;
+          this.offset = 0;
+
+          const key = JSON.stringify({
+            crop,
+            season,
+            currentBoundary,
+            reportType,
+            reportDate,
+          });
+
+          return this.memoizationService.memoize(
+Use the generated key for memoization
