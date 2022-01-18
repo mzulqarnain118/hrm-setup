@@ -1,0 +1,30 @@
+<div class="sidepanel">
+  <app-total-stats />
+  <app-selection-bar class="ReportSelection"> </app-selection-bar>
+  <div class="table1"><app-t1-areas class="T1"></app-t1-areas></div>
+  <div class="icon" (click)="collapseSideBar()">@if ((sharedState.isCollapse$|async)===false) {
+    <img
+      src="../../../assets/images/closeIcon.svg" />
+  }</div>
+  <div class="table"><app-t2-crops class="T2"></app-t2-crops></div>
+  <div class="table"><app-t3-bar-chart class="T3"></app-t3-bar-chart></div>
+  <dialog #dialog class="dialog">
+    <div>
+      <div class="header-dialog">
+        <h5>{{sharedState.currentCrop$|async}} data of the year {{sharedState.currentSeason$|async}}</h5>
+        <div (click)="popCancel()">
+        <img class="cancel" src="../../../assets/images/dashboard/cancel.svg"/></div>
+      </div>
+      <div class="body row1">
+        <div class="column">
+          <p class="title">Total size of fields</p>
+          <h3 class="counting">{{(sharedState.table2data$|async)}}</h3>
+        </div>
+        <div class="column">
+          <p class="title">Total size (Hardcoded)</p>
+          <h3 class="counting">3434</h3>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</div>
