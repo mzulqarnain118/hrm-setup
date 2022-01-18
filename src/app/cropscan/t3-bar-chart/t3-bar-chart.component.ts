@@ -92,3 +92,10 @@ Use the generated key for memoization
       });
   }
 , ['$event'])
+  onElementScroll($event: any) {
+    const scrollPosition = $event.target.scrollTop;
+    if (
+      scrollPosition > this.prevScrollPosition &&
+      this.unFilteredData?.length < this.maxCount
+    ) {
+his.offset += 1;
