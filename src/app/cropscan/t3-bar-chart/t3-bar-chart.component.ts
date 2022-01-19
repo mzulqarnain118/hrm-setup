@@ -99,3 +99,11 @@ Use the generated key for memoization
       this.unFilteredData?.length < this.maxCount
     ) {
 his.offset += 1;
+      this.loadData();
+    }
+
+    this.prevScrollPosition = scrollPosition;
+  }
+
+  private loadData() {
+.apiService
