@@ -107,3 +107,45 @@ his.offset += 1;
 
   private loadData() {
 .apiService
+      .getT3Data(
+        this.crop,
+        this.reportType,
+        this.season,
+        this.reportDate,
+        this.currentBoundary,
+        this.limit,
+        this.offset
+      )
+      .subscribe((apiResponse) => {
+        //todo: this needs to be update in the BE
+        this.unFilteredData = [...this.unFilteredData, ...apiResponse.data];
+        const filteredData = apiResponse.data?.filter(
+          (res: any) => res.series[0].value != 0
+        );
+        this.multi = [...this.multi, ...filteredData];
+        this.maxCount = apiResponse.total;
+        this.cdr.detectChanges();
+      });
+  }
+
+  ngAfterViewInit() {}
+  heightMultiplyingConstant = 350;
+  view: [number, number] = [
+    230,
+    this.multi.length * this.heightMultiplyingConstant,
+  ];
+
+  getChartHeight(): string {
+    return `${this.multi.length * 2.3}vh`;
+  }
+
+  showXAxis: boolean = false;
+  showYAxis: boolean = true;
+  gradient: boolean = false;
+  showLegend: boolean = false;
+  showXAxisLabel: boolean = false;
+  yAxisLabel: string = 'Country';
+  showYAxisLabel: boolean = false;
+
+  // paint params
+  colorMap = colorMap;
