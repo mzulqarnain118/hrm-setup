@@ -17,3 +17,49 @@ export class ToggleSwitchComponent implements OnInit {
   @Output() clickedEvent = new EventEmitter<Tileset>();
   modifiedTileset: string;
 oolean = false;
+  color= new FormControl('#0000ff') // Default value for color
+
+  @ViewChild('input') input: ElementRef;
+
+  constructor(private fb: FormBuilder, private mapService:MapService) {
+    // Initialize the form group in the constructor
+  }
+
+  ngOnInit(): void {
+    this.color.valueChanges.pipe(distinctUntilChanged()).subscribe((res:string|null)=>{
+      this.color.setValue(res);
+      if(res)
+      this.mapService.HandleTilesetColor(this.tileset)
+    })
+  }
+  ngOnChanges(): void {
+    if (this.tileset && this.tileset.name) {
+      let separator = this.tileset.name.includes('_') ? '_' : '-';
+      let parts = this.tileset.name.split(separator);
+      parts.shift(); // Remove the first element
+      this.modifiedTileset = parts.join(separator);
+    }
+
+    this.color.setValue(this.getColorForKey(this.tileset.name))
+  }
+
+  onToggle(): void {
+    this.tileset.visible = !this.tileset.visible;
+    this.clickedEvent.emit(this.tileset);
+  }
+
+  showImage() {
+    this.showMenuImage = true;
+  }
+
+  hideImage() {
+    this.showMenuImage = false;
+  }
+
+  onColorPicker(tileset: Tileset) {
+    this.input.nativeElement.click();
+ {
+    const colorObj = colorMap.find(item => key.toLowerCase().includes(item.name.toLowerCase()));
+    return colorObj ? colorObj.value : '#757070'; // default to black if key is not found
+  }
+}
