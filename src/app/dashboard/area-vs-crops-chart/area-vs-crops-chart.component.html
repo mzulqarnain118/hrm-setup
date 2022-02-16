@@ -1,0 +1,26 @@
+<div class="box">
+  <div class="max">
+    <div class="row justify-between">
+      <p class="chart-title">Total Area vs Crops</p>
+      <select>
+        @for (graph of filteredGraphTypes; track graph) {
+          <option>{{graph.graphs}}</option>
+        }
+      </select>
+    </div>
+  </div>
+  <div [style.height]="700">
+    <ngx-charts-bar-vertical-2d
+      [scheme]="colorScheme"
+      [results]="groupedVerticalBarChartData"
+      [showGridLines]="false"
+      [xAxis]="'true'"
+      [yAxis]="'true'"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      >
+    </ngx-charts-bar-vertical-2d>
+  </div>
+</div>
