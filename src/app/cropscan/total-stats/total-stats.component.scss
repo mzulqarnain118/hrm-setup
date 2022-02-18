@@ -42,3 +42,44 @@
   color: white;
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+.TotalStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Poppins", sans-serif;
+  margin: 2vh;
+  border: 1px solid #eeeeee;
+
+  .dataItem {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 10px;
+    align-items: center;
+
+    .key {
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .value {
+      font-size: 0.8rem;
+    }
+  }
+}
+.cur {
+  cursor: pointer;
+}
+.TotalStats .dataItem:last-child,
+.TotalStats .dataItem:nth-last-child(2) {
+  border: 1px solid #ccc; /* Border for last and second-to-last items */
+}
+
+.TotalStats .dataItem:nth-last-child(2):hover {
+r: white;
+}
+
+.TotalStats .dataItem:nth-last-child(1):hover {
+  background-color: #1bc693;
+  color: white;
+}
