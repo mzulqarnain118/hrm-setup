@@ -27,3 +27,10 @@ import { NgClass } from '@angular/common';
         DropdownFilterComponent,
         AreaVsCropsChartComponent,
 t,
+        HistoricalWeatherChartComponent,
+        WeatherForecastChartComponent,
+        AddCommasPipe,
+    ],
+})
+export class DashboardComponent implements OnInit {
+: roles[];
