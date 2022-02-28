@@ -34,3 +34,42 @@ t,
 })
 export class DashboardComponent implements OnInit {
 : roles[];
+
+  private apiService = inject(ApiService);
+  protected dashboardService = inject(DashboardService);
+  protected roleService = inject(RoleService);
+  protected sharedService = inject(SharedStateService);
+  private router = inject(Router);
+
+  boxes = [
+    {
+      title: 'Total Grower Count',
+      key: 'total_grower_count',
+      count: '--',
+      type: 'eSurvey',
+      url: this.apiService.getRedirectionUrl(),
+      product_name: 'ESurvey',
+    },
+    {
+      title: 'Total Area',
+      key: 'total_area',
+      count: '--',
+      type: 'eSurvey (Acres)',
+      product_name: 'ESurvey',
+    },
+    {
+      title: 'Main Crop Area',
+      count: '--',
+      type: 'Cropscan (Acres)',
+      product_name: 'Cropscan',
+    },
+    {
+      title: 'Other Crop Area',
+      count: '--',
+      type: 'L1 other crops',
+      product_name: 'Cropscan',
+    },
+    {
+      title: 'Uncultivated Land',
+      count: '--',
+    product_name: 'Arable Land',
