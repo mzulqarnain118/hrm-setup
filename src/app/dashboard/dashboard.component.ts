@@ -73,3 +73,66 @@ export class DashboardComponent implements OnInit {
       title: 'Uncultivated Land',
       count: '--',
     product_name: 'Arable Land',
+    },
+    {
+      title: 'Expected Supply',
+      count: '--',
+      type: 'Yield estimation',
+      product_name: 'Yield Estimation',
+    },
+    {
+      title: 'Active Projects',
+      count: '--',
+      type: 'Developro',
+      product_name: 'Developro',
+    },
+    {
+      title: 'Active Employees',
+      count: '--',
+      type: 'Team Trak',
+      product_name: 'Team Trak',
+    },
+  ];
+
+  ngOnInit(): void {
+    this.roleService.roles$.subscribe((res) => {
+      this.roles=res;
+      if (this.roleService.isAccess('eSurvey', this.roles)) {
+        this.dashboardService.getEsurveyStats().subscribe((res) => {
+          this.updateBoxCount('total_grower_count', res.total_grower_count);
+          this.updateBoxCount('total_area', res.total_area);
+        });
+      }
+    });
+  }
+
+  updateBoxCount(key: string, value: any): void {
+x) => box.key === key);
+    if (box) {
+      box.count = value.toString(); // Assuming value is a number
+    }
+  }
+
+  onClick(item: string, isAccess: boolean) {
+    if (!isAccess) return;
+    if (item === 'Main Crop Area') {
+      this.router.navigateByUrl('/cropscan');
+      this.sharedService.updateMenu('cropscan');
+    }
+    if (item === 'Total Grower Count') {
+      console.log('redirecting to agrichain');
+    }
+  }
+
+  isTotalAreaVsCropscan() {
+    return totalAreaGraphTypes.some((res: any) =>
+      this.roleService.isAccess(res.product_name, this.roles),
+    );
+  }
+
+  isEsurvey() {
+    return eSurveyGraphTypes.some((res: any) =>
+      this.roleService.isAccess(res.product_name, this.roles),
+    );
+  }
+}
