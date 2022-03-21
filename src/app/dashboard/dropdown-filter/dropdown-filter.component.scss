@@ -44,13 +44,16 @@
     margin-right: 5px;
     margin-left: 15px;
     align-self: center;
-  border-color: var(--hover-border-color);
+  }
+  
+  .dropdown-container select:hover {
+    border-color: var(--hover-border-color);
     background-color: #1BC693;
     color: white;
   }
 
   :host{.search-container {
-splay: flex;
+    display: flex;
     flex-direction: row;
     position: relative;
     align-items: center;
@@ -86,7 +89,8 @@ splay: flex;
   }
   
   .search-group input {
-   border-radius: 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
     outline: none;
     width: 100%;
     max-height: 3.5vh;
