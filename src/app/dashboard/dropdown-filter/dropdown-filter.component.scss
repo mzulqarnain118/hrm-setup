@@ -45,3 +45,9 @@
     margin-left: 15px;
     align-self: center;
   border-color: var(--hover-border-color);
+    background-color: #1BC693;
+    color: white;
+  }
+
+  :host{.search-container {
+splay: flex;
