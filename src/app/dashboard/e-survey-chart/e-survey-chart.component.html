@@ -1,1 +1,14 @@
 <div class="box">
+  <div class="max">
+    <div class="row justify-between mt-3">
+      <select>
+        @for (graph of filteredGraphTypes; track graph) {
+          <option>{{graph.graphs}}</option>
+        }
+      </select>
+      <div>
+      </div>
+    </div>
+  </div>
+  <div [style.height]="700">
+ts-bar-vertical
