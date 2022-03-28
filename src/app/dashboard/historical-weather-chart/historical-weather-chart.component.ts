@@ -37,3 +37,8 @@ export class HistoricalWeatherChartComponent {
         {
           name: 'Jan',
   {
+          name: 'Feb',
+          value: 50,
+        },
+        {
+     name: 'Mar',
