@@ -1,1 +1,43 @@
 select {
+  border-radius: 30px;
+  background: white;
+  padding: 6px;
+}
+.chart-description {
+  margin: 0px 3px 20px 3px;
+}
+
+.mt-3{
+  margin-top: 1.2rem;
+  margin-bottom: 1.1rem;
+}
+
+
+p {
+  margin: 0px;
+}
+
+.item.active {
+  padding: 0px 11px;
+  background: #5dc398;
+  border-radius: 22px;
+  color: white;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  background: #f2f4f6;
+  border-radius: 4rem;
+  gap: 1rem;
+  padding: 5px 23px;
+  cursor: pointer;
+}
+
+.outer-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  gap: 3px;
