@@ -42,3 +42,14 @@ export class HistoricalWeatherChartComponent {
         },
         {
      name: 'Mar',
+          value: 12,
+        },
+        {
+          name: 'Apr',
+          value: 3,
+        },
+        {
+          name: 'May',
+          value: 23,
+        },
+         name: 'Jun',
