@@ -53,3 +53,32 @@ export class HistoricalWeatherChartComponent {
           value: 23,
         },
          name: 'Jun',
+          value: 45,
+        },
+        {
+          name: 'Jul',
+          value: 10,
+        },
+        {
+          name: 'Aug',
+          value: 50,
+        },
+        {
+          name: 'Sep',
+          value: 12,
+        },
+        {
+          name: 'Oct',
+          value: 3,
+ {
+          name: 'Nov',
+          value: 23,
+        },
+        {
+          name: 'Dec',
+          value: 45,
+        },
+      ],
+    },
+  ];
+}
