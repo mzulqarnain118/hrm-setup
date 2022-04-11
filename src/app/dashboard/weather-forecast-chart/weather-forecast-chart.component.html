@@ -8,3 +8,24 @@
           id="temperature"
           name="weather"
  value="temperature"
+        />
+        <label for="temperature">Temperature</label>
+
+        <input type="radio" id="rainfall" name="weather" value="rainfall" />
+        <label for="rainfall">Rainfall</label>
+      </div>
+    </div>
+  </div>
+  <div [style.height]="700">
+    <ngx-charts-line-chart
+      [scheme]="colorScheme"
+      [xAxis]="showXAxis"
+      [showGridLines]="false"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [results]="weatherLineChart"
+    >
+    </ngx-charts-line-chart>
+  </div>
