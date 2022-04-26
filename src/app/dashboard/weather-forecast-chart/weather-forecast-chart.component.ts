@@ -14,3 +14,15 @@ export class WeatherForecastChartComponent {
   gradient: boolean = true;
   showLegend: boolean = true;
 l: boolean = true;
+  showYAxisLabel: boolean = true;
+  yAxisLabel: string = 'Average Temperature';
+  colorScheme: Color = {
+    name: 'Variation',
+    selectable: true,
+    group: ScaleType.Ordinal,
+    domain: ['#1BC693'],
+  };
+  weatherLineChart = [
+    {
+      name: 'Weather',
+: [
