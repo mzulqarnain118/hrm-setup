@@ -1,0 +1,37 @@
+@if (!isLoginPage()) {
+  <div class="outer">
+    <div class="main-container">
+      <div>
+        <h1>{{ username$ | async }}</h1>
+      </div>
+      <div class="inner-container">
+        <div class="left-menu">
+          @for (menu of menus; track menu) {
+            <div
+              class="item"
+          (click)="
+            setIsActive(
+              menu.key,
+              roleService.isAccess(menu.key,roles, 'platfrom_name')
+            )
+          "
+              [class.active]="roleService.isActive(menu.key)"
+          [ngClass]="{
+            disabled: !roleService.isAccess(menu.key,roles, 'platfrom_name'),
+            hover: !roleService.isAccess(menu.key,roles, 'platfrom_name')
+          }"
+              >
+              <img src="../../assets/images/dashboard/{{ menu.icon }}.svg" />
+              <p>{{ menu.title }}</p>
+            </div>
+          }
+        </div>
+        <div class="right-buttons">
+          <!-- <button>List View</button>
+          <button>Basemap View</button> -->
+          <millLogo class="logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+}
