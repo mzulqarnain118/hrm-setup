@@ -26,3 +26,13 @@ l: boolean = true;
     {
       name: 'Weather',
 : [
+        {
+          name: 'Jan',
+          value: 10,
+        },
+        {
+          name: 'Feb',
+          value: 50,
+        },
+        {
+name: 'Mar',
