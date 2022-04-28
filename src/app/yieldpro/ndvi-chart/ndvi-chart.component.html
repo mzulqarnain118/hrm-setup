@@ -11,3 +11,38 @@
           March {{ i }}
         </span>
 </div>
+  </div>
+  <div class="row">
+    <div class="dropdown-container">
+      <div>
+        <label> Index </label>
+        <Select>
+        <option>NDVI</option>
+      </Select>
+    </div>
+    <div>
+      <label> Start Date </label>
+      <input type="date" />
+    </div>
+
+    <div>
+      <label> End Date </label>
+      <input type="date" />
+    </div>
+    <div>
+      <label> Weather Date </label>
+      <Select>
+      <option>select date</option>
+    </Select>
+  </div>
+</div>
+<div class="chart">
+  <ngx-charts-line-chart
+    [scheme]="colorScheme"
+    [results]="single"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+l"
