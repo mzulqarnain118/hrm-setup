@@ -1,1 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background-color: white;
+    margin-top: 14px;
+    border-radius: 15px;
+}
+.toggle-container {
+    position: fixed;
+    bottom: 0.5rem;
+em;
