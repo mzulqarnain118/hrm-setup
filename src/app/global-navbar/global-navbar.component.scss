@@ -1,1 +1,13 @@
 :host {
+  .outer {
+    padding: 0rem 2rem;
+  }
+  .main-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .inner-container {
+    flex-direction: row;
+    gap: 2rem;
+686868;
