@@ -12,3 +12,35 @@
     position: fixed;
     bottom: 0.5rem;
 em;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 78.5%;
+    z-index: 1000;
+    border-radius: 5px 0px 0px 0px !important;
+  }
+
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown-container select,.dropdown-container input {
+  width: 100%;
+  min-width: 10vh;
+  height: 38px;
+  background: #1BC693;
+  border:1px solid white;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  padding-left: 10px;
+  font-size: 17px;
+  padding-right: 5px;
+}
+
+.dropdown-container input{
+    width: 92%;
+}
+hover,.dropdown-container select:hover  {
