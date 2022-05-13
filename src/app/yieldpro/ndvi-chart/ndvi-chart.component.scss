@@ -44,3 +44,49 @@ em;
     width: 92%;
 }
 hover,.dropdown-container select:hover  {
+  //   background-color: #1BC693;
+  //   border: 1px solid #1BC693;
+  //   color: white;
+  // }
+
+.dropdown-container {
+  position: relative;
+-radius: 15px;
+  background: #1BC693;
+  padding: 15px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.chart {
+    flex: 1;
+    width: 77%;
+    height: 280px;
+    margin-top: 40px; /* Adjust spacing between charts */
+    gap: 20px;
+  }
+
+  .ngx-charts-outer{
+    width: 92% !important;
+  }
+  
+
+  .date{
+    padding: 7px 2rem;
+    cursor: pointer;
+  }
+
+  .active{
+    background-color:#1BC693;
+    color: white;
+    padding: 7px;
+    border-radius: 100px;
+  }
+
+  :host{
+    label{
+      color: white;
+    }
