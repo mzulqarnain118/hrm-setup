@@ -20,3 +20,39 @@ export class NdviChartComponent {
   protected showXAxisLabel = true;
   protected xAxisLabel: "Years";
 Label = true;
+  protected yAxisLabel: "Salary";
+  protected graphDataChart: any[];
+  activeIndex: number = 0;
+  colorScheme: Color = {
+    name: 'Variation',
+    selectable: true,
+    group: ScaleType.Linear,
+    domain: ['#1BC693'],
+  };
+  
+  constructor(){
+    this.single=[{
+      name: 'Kumaresan',
+      series: [
+        {
+          name: '2016',
+          value: '0',
+        },
+        {
+          name: '2017',
+          value: '0.1',
+        },
+        {
+          name: '2018',
+          value: '0.2',
+        },
+        {
+          name: '2019',
+          value: '0.5',
+        },
+      ],
+    },]
+  }
+  
+
+   this.activeIndex = index;
