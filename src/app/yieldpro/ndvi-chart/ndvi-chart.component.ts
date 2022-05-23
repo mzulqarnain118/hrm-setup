@@ -56,3 +56,8 @@ Label = true;
   
 
    this.activeIndex = index;
+  }
+
+  isActive(index: number): boolean {
+    return this.activeIndex === index;
+
