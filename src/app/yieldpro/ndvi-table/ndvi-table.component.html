@@ -1,1 +1,17 @@
 
+<h4>NDVI</h4>
+@if (data) {
+  <div  class="tableFixHead">
+    <table class="table-wrapper">
+      <tbody>
+        @for (obj of data; track obj; let i = $index) {
+          <tr>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.col1}}</td>
+            <td>{{ obj.col2}}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}
