@@ -29,3 +29,15 @@ ext-align: start;
 
   td {
 ont-weight: normal; // Normal font for data cells
+    font-size: 0.8em;
+  }
+
+  tbody,
+  tr,
+  td {
+    padding-left: 5%;
+  }
+
+  tr:hover td {
+    background-color: #1BC693;
+hite;
