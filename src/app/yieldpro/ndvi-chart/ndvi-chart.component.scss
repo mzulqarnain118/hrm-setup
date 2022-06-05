@@ -168,3 +168,17 @@ px;
   
 
 : pointer;
+  }
+
+  .active{
+    background-color:#1BC693;
+    color: white;
+    padding: 7px;
+    border-radius: 100px;
+  }
+
+  :host{
+    label{
+      color: white;
+    }
+  }
