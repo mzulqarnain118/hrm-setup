@@ -61,3 +61,4 @@ Label = true;
   isActive(index: number): boolean {
     return this.activeIndex === index;
 
+import { Component } from '@angular/core';
