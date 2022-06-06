@@ -14,3 +14,26 @@ rollbar {
     display: none;
   }
 eight: auto;
+  width: auto;
+}
+
+.icon {
+    position: absolute;
+    margin-top: 21%;
+    margin-left: 20%;
+    z-index: 1;
+    padding: 7px;
+    height: 26px;
+    font-size: 18px;
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+ adjust grid columns if needed */
