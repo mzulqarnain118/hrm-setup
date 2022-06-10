@@ -79,3 +79,50 @@ export class NdviChartComponent {
   protected showXAxis = true;
   protected showYAxis = true;
 ent = false;
+  protected showLegend = false;
+  protected showXAxisLabel = true;
+  protected xAxisLabel: "Years";
+  protected showYAxisLabel = true;
+  protected yAxisLabel: "Salary";
+  protected graphDataChart: any[];
+  activeIndex: number = 0;
+  colorScheme: Color = {
+    name: 'Variation',
+    selectable: true,
+    group: ScaleType.Linear,
+    domain: ['#1BC693'],
+  };
+  
+  constructor(){
+    this.single=[{
+resan',
+      series: [
+        {
+          name: '2016',
+          value: '0',
+        },
+        {
+          name: '2017',
+          value: '0.1',
+        },
+        {
+          name: '2018',
+          value: '0.2',
+        },
+        {
+          name: '2019',
+          value: '0.5',
+        },
+      ],
+    },]
+  }
+  
+
+  setActive(index: number): void {
+    this.activeIndex = index;
+  }
+
+  isActive(index: number): boolean {
+    return this.activeIndex === index;
+  }
+}
