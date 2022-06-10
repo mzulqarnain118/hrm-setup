@@ -49,3 +49,46 @@ eight: auto;
   }
 }
 argin-left: 2rem;
+}
+
+.dropdown-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90%;
+  color: var(--primary-text-color);
+}
+
+.dropdown-container select {
+  width: 90%;
+  min-width: 10vh;
+  height: 38px;
+  background: white;
+  border:1px solid #1BC693;
+  color: #1BC693;
+  border-radius: 8px;
+  cursor: pointer;
+  padding-left: 10px;
+  font-size: 17px;
+  padding-right: 5px;
+}
+
+.dropdown-container select:hover {
+  background-color: #1BC693;
+  border: 1px solid #1BC693;
+  color: white;
+}
+
+.dropdown-container {
+  position: relative;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.table1{
+  padding: 0px 25px;
+}
+
+.table1 h4{
