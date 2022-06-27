@@ -126,3 +126,16 @@
   }
   
 ontainer {
+    display: flex;
+    flex-direction: row !important;
+    height: 83vh;
+  }
+  
+  .navbar {
+    margin: 0;
+  }
+  
+  .sidepanel {
+    overflow: auto;
+    min-width: 39vh; /* Set a minimum width */
+d-color: #f0f0f0;
