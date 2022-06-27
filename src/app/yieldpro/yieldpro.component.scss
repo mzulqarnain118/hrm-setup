@@ -118,3 +118,11 @@
     gap: 3vh;
     overflow-x: hidden;
 .TopContainer::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* Optional: just to ensure there's no residual scrollbar coloring */
+  }
+  .TopContainer {
+    scrollbar-width: none !important;
+  }
+  
+ontainer {
