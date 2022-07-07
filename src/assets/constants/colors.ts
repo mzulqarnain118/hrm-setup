@@ -47,3 +47,27 @@ export const AvocadoColor = '#1f2dea';
 export const CloudColor = '#D5D8DC';
 export const white = '#FFFFFF';
 A', // Yield <500
+  129,
+  '#0D47A1', // Yield 500-600
+  130,
+  '#1B5E20', // Yield 600-700
+  131,
+  '#ffeb3b', // Yield 700-800
+  132,
+  '#F44336', // Yield 800-900
+  133,
+  '#F5B041', // Yield 900-1000
+  134,
+  '#29B6F6', // Yield 1000-1100
+  135,
+  '#FF6A02', // Yield >1100
+  '#E57373',
+];
+
+//empty land color // dark grey
+export const EmptyLandColor = '#707B7C';
+
+export const OverlapColor = [
+  150,
+  '#1F51FF', // overlap_ Spring_maize_wheat
+verlap_Rice_wheat
