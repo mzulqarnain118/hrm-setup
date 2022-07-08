@@ -71,3 +71,47 @@ export const OverlapColor = [
   150,
   '#1F51FF', // overlap_ Spring_maize_wheat
 verlap_Rice_wheat
+  152,
+  '#FFFF33', // overlap_Rice_Potato
+  155,
+  '#884EA0', // overlap_emptyland_springmaize
+  153,
+  '#C0392B', // overlap_rice_spring_maize
+  154,
+  '#FFA500', // overlap_potato_spring_maize
+  156,
+  '#85C1E9', // overlap_fallmaize_springmaize
+  '#E57373',
+];
+
+export const VarietyColorIds = [
+  17,
+  '#263238',
+  18,
+  '#616161',
+  19,
+  '#7B7D7D',
+  20,
+  '#BF360C',
+  21,
+  '#FF6F00',
+  22,
+  '#FF6F00',
+  23,
+  '#FFB74D',
+  24,
+  '#FFEB3B',
+  25,
+  '#F4D03F',
+  26,
+  '#01579B',
+  27,
+  '#03A9F4',
+  28,
+  '#26C6DA',
+  29,
+  '#1B5E20',
+  30,
+  '#4CAF50',
+  31,
+0000',
