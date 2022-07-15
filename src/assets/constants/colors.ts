@@ -164,3 +164,28 @@ export const VarietyColorIds = [
   57,
   '#784212',
 36DFE',
+  86,
+  '#6F29A1',
+  87,
+  '#E56A38',
+  101,
+  '#00A36C',
+  102,
+  '#FFC0CB',
+  137,
+  '#FF0000',
+  136,
+  '#00ffff',
+  '#E57373',
+];
+
+export const HealthColorIds = [
+  73,
+  '#ff1b0b', // Low Vegetation
+  74,
+  '#ffb500', // Moderate
+  75,
+  '#89ff1b', // Good
+  76,
+  '#1E88E5', // Excellent
+olor
