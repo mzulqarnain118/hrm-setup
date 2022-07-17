@@ -189,3 +189,31 @@ export const HealthColorIds = [
   76,
   '#1E88E5', // Excellent
 olor
+];
+
+export const SowingColorIds = [
+  61,
+  '#FFEE58', // January - Yellow
+  62,
+  '#009688', // February - Teal
+  63,
+  '#BDBDBD', // March - Grey
+  64,
+  '#303F9F', // April - Dark Blue
+  65,
+  '#8BC34A', // May - Light Green
+  66,
+  '#B71C1C', // June - Red
+  67,
+  '#5D4037', // July - Brown
+  68,
+  '#00BCD4', // August - Aqua
+  69,
+  '#1B5E20', // September - Dark Green
+  70,
+  '#6A1B9A', // October - Purple
+  71,
+  '#F57F17', // November - Orange
+  72,
+  '#1976D2', // December - Light Blue
+ral
