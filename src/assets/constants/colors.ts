@@ -241,3 +241,35 @@ export const StressColorIds = [
   '#1E88E5', // High Vigour
   '#E57373', // Default color
 rIds = [
+  83,
+  '#ebed8c', // Low
+  84,
+  '#9fc674', // Medium
+  85,
+  '#55a05d', // No Stress
+  '#E57373', // Default color
+];
+
+export const WaterStressColorIds = [
+  124,
+  '#FF1B0B',
+  125,
+  '#F36379',
+  126,
+  '#557df6',
+  127,
+  '#1C00AA',
+  '#E57373',
+];
+
+export const NitrogenColorIds = [
+  103,
+  '#FFB500', // Low
+  104,
+  '#50bb2f', // Medium
+  105,
+  '#1C00AA', // High
+  '#E57373', // Default color
+];
+
+6,
