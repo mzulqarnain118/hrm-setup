@@ -217,3 +217,27 @@ export const SowingColorIds = [
   72,
   '#1976D2', // December - Light Blue
 ral
+  171,
+  '#89ff1b',
+  172,
+  '#FFFF33',
+  173,
+  '#FFA500',
+  93,
+  '#DA8CF7', // Early June
+  37,
+  "#5D4037",
+  '#E57373', // Default color
+];
+
+export const StressColorIds = [
+  77,
+  '#ff1b0b', // Stress
+  78,
+  '#ffb500', // Potential Stress
+  79,
+  '#89ff1b', // No Stress
+  80,
+  '#1E88E5', // High Vigour
+  '#E57373', // Default color
+rIds = [
