@@ -273,3 +273,6 @@ export const NitrogenColorIds = [
 ];
 
 6,
+  '#993404', // High
+  97,
+#fe9929', // Medium
