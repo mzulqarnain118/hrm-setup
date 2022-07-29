@@ -276,3 +276,20 @@ export const NitrogenColorIds = [
   '#993404', // High
   97,
 #fe9929', // Medium
+  98,
+  '#ffffd4', // Low
+  '#E57373', // Default color
+];
+
+// paint params
+export const colorMap = [
+  { name: 'Artichoke', value: '#3c5426' },
+  { name: 'Potato', value: PotatoColor },
+  { name: 'Grapes', value: '#e30022' },
+  { name: 'Olive Tree', value: '#54262b' },
+  { name: 'Jojoba', value: '#ff007f' },
+  { name: 'Asparagus', value: '#100c08' },
+  { name: 'Tangerine', value: '#ff4f00' },
+  { name: 'Avocado', value: '#1f2dea' },
+  {
+
