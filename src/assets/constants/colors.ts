@@ -293,3 +293,29 @@ export const colorMap = [
   { name: 'Avocado', value: '#1f2dea' },
   {
 
+    value: '#993404',
+  },
+  {
+    name: 'Medium_',
+    value: '#50bb2f',
+  },
+  {
+    name: 'Low_',
+    value: '#FFB500',
+  },
+  {
+    name: 'High_',
+    value: '#1C00AA',
+  },
+  {
+    name: 'Medium',
+    value: '#fe9929',
+  },
+  {
+    name: 'Low',
+    value: '#ffffd4',
+  },
+  {
+    name: 'High Zone',
+    value: '#55a05d',
+ne',
