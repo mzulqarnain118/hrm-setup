@@ -351,3 +351,11 @@ ne',
   },
   {
 e: '#7CFC00',
+  },
+  {
+    name: 'Watermelon',
+    value: '#FC6C85',
+  },
+  {
+    name: 'Orchards',
+e: '#6A1B9A',
