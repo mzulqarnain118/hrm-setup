@@ -319,3 +319,35 @@ export const colorMap = [
     name: 'High Zone',
     value: '#55a05d',
 ne',
+    value: '#ebed8c',
+  },
+  {
+    name: 'Medium Zone',
+    value: '#9fc674',
+  },
+  {
+    name: 'Harvested',
+    value: '#F89508',
+  },
+  {
+    name: 'Urban',
+    value: '#D5D8DC',
+  },
+  {
+    name: 'Sugarcane',
+    value: SugarCaneColor,
+  },
+  {
+    name: 'Cotton',
+    value: CottonColor,
+  },
+  {
+    name: 'Maize',
+    value: MaizeColor,
+  },
+  {
+    name: 'Others',
+    value: '#A0A0A0',
+  },
+  {
+e: '#7CFC00',
