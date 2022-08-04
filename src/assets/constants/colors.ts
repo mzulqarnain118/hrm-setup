@@ -359,3 +359,28 @@ e: '#7CFC00',
   {
     name: 'Orchards',
 e: '#6A1B9A',
+  },
+  {
+    name: 'Juaar',
+    value: '#0D47A1',
+  },
+  {
+    name: 'Rice',
+    value: '#1B5E20',
+  },
+  {
+    name: 'Other Vegetation',
+    value: '#e9ed2c',
+  },
+  {
+    name: 'Chillis',
+    value: ChilliColor,
+  },
+  {
+    name: 'Mustard',
+    value: '#F5B041',
+  },
+  {
+    name: 'Canola',
+    value: '#29B6F6',
+a',
