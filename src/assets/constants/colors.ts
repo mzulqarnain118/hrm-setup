@@ -384,3 +384,41 @@ e: '#6A1B9A',
     name: 'Canola',
     value: '#29B6F6',
 a',
+    value: '#FF6A02',
+  },
+  {
+    name: 'Tobacco',
+    value: '#4E342E',
+  },
+  {
+    name: 'Wheat',
+    value: WheatColor,
+  },
+  {
+    name: 'Tomato',
+    value: TomatoColor,
+  },
+  {
+    name: 'Mountain',
+    value: '#707B7C',
+  },
+  {
+    name: 'Other Variety',
+    value: '#263238',
+  },
+  {
+    name: 'CoL-29',
+    value: '#616161',
+  },
+  {
+    name: 'CoL-44',
+    value: '#7B7D7D',
+  },
+  {
+    name: 'CoL-54',
+    value: '#BF360C',
+  },
+  {
+    name: 'BL-19',
+    value: '#FF6F00',
+'#FF6F00',
