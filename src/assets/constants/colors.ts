@@ -422,3 +422,32 @@ a',
     name: 'BL-19',
     value: '#FF6F00',
 '#FF6F00',
+  },
+  {
+    name: 'L-116',
+    value: '#FFB74D',
+  },
+  {
+    name: 'L-118',
+    value: '#FFEB3B',
+  },
+  {
+    name: 'Triton',
+    value: '#F4D03F',
+  },
+  {
+    name: 'BF-162',
+    value: '#01579B',
+  },
+  {
+    name: 'CP43-33',
+    value: '#03A9F4',
+  },
+  {
+    name: 'CP72-2086',
+    value: '#26C6DA',
+  },
+  {
+    name: 'CP-77400',
+    value: '#1B5E20',
+    value: '#4CAF50',
