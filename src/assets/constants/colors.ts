@@ -451,3 +451,31 @@ a',
     name: 'CP-77400',
     value: '#1B5E20',
     value: '#4CAF50',
+  },
+  {
+    name: 'SPF-213',
+    value: '#C0CA33',
+  },
+  {
+    name: 'CPF-237',
+    value: '#311B92',
+  },
+  {
+    name: 'HSF-240',
+    value: '#ff0000',
+  },
+  {
+    name: 'SPF-234',
+    value: '#AB47BC',
+  },
+  {
+    name: 'SPF-245',
+    value: '#F06292',
+  },
+  {
+    name: 'HSF-242',
+    value: '#880E4F',
+  },
+  {
+    name: 'CPF-243',
+ {
