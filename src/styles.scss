@@ -1,1 +1,31 @@
 @import "mapbox-gl/dist/mapbox-gl.css";
+body {
+  margin: 0;
+  width: auto;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
+}
+
+canvas.mapboxgl-canvas {
+  background: linear-gradient(to bottom right, rgb(1, 33, 33), rgb(1, 17, 66));
+  border-radius: 4vh;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+
+//bottom right controls
+.mapboxgl-ctrl-bottom-right {
+  bottom: 25% !important;
+  transform: translateY(-50%);
+}
+.mapboxgl-ctrl-zoom-in,
+.mapboxgl-ctrl-zoom-out {
+  background-color: #008cd8;
+  border: none;
+  border-radius: 50%;
+8px;
