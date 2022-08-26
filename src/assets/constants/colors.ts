@@ -479,3 +479,14 @@ a',
   {
     name: 'CPF-243',
  {
+    name: 'CPF-246',
+    value: '#D98880',
+  },
+  {
+    name: 'CPF-247',
+    value: '#4E342E',
+  },
+  {
+    name: 'CPF-248',
+    value: '#CCFF00',
+  name: 'CPF-249',
