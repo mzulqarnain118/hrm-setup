@@ -496,3 +496,40 @@ a',
     name: 'CPF-250',
     value: '#669900',
  {
+    name: 'CPF-251',
+    value: '#00FF00',
+  },
+  {
+    name: 'CPF-252',
+    value: '#E040FB',
+  },
+  {
+    name: 'CPF-253',
+    value: '#B388FF',
+  },
+  {
+    name: 'Stress_',
+    value: '#FF1B0B',
+  },
+  {
+    name: 'No Stress_',
+    value: '#557df6',
+  },
+  {
+    name: 'NSG-59',
+    value: '#2962FF',
+  },
+  {
+    name: 'SP-93',
+    value: '#18FFFF',
+  },
+  {
+    name: 'US-133',
+    value: '#64FFDA',
+  },
+  {
+    name: 'US-252',
+    value: '#FF5722',
+  },
+  {
+AE',
