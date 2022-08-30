@@ -39,3 +39,66 @@ canvas.mapboxgl-canvas {
 
 .mapboxgl-ctrl-icon {
  0%;
+  border-radius: 50%;
+}
+
+.mapboxgl-ctrl-zoom-in:hover,
+.mapboxgl-ctrl-zoom-out:hover {
+  background-color: #e7e7e7;
+  transform: scale(1.1);
+}
+
+.mapboxgl-ctrl-zoom-in:active,
+.mapboxgl-ctrl-zoom-out:active {
+  background-color: #d4d4d4;
+  transform: scale(0.95);
+}
+
+.mapboxgl-canvas-container {
+  height: 100%;
+  min-height: 83vh;
+}
+
+.mapboxgl-popup {
+  max-width: 400px;
+  color: rgb(242, 232, 232);
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-map {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  .max {
+    width: 100%;
+  }
+}
+
+.justify-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: calc(50% - 10px); /* Adjust spacing if needed */
+  max-width: calc(50% - 10px); /* Adjust spacing if needed */
+  margin-bottom: 20px; /* Adjust spacing between charts */
+  gap: 20px;
+}
+
+.chart-title {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
