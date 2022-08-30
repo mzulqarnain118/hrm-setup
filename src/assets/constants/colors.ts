@@ -533,3 +533,37 @@ a',
   },
   {
 AE',
+  },
+  {
+    name: 'CPF-238',
+    value: '#FFE0B2',
+  },
+  {
+    name: 'YT-55',
+    value: '#FFCC80',
+  },
+  {
+    name: 'CPF-213',
+    value: '#F4FF81',
+  },
+  {
+    name: 'US-127',
+    value: '#DCEDC8',
+  },
+  {
+    name: 'CO-1148',
+    value: '#80CBC4',
+  },
+  {
+    name: 'SPF-239',
+    value: '#9A7D0A',
+  },
+  {
+    name: 'SPF-238',
+    value: '#784212',
+  },
+  {
+    name: 'CPF-254',
+    value: '#FF1744',
+  },
+'#4A148C',
