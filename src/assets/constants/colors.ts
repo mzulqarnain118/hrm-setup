@@ -567,3 +567,37 @@ AE',
     value: '#FF1744',
   },
 '#4A148C',
+  },
+  {
+    name: 'PONDA',
+    value: '#536DFE',
+  },
+  {
+    name: 'January',
+    value: '#FFEE58',
+  },
+  {
+    name: 'February',
+    value: '#009688',
+  },
+  {
+    name: 'March',
+    value: '#BDBDBD',
+  },
+  {
+    name: 'April',
+    value: '#303F9F',
+  },
+  {
+    name: 'May',
+    value: '#8BC34A',
+  },
+  {
+    name: 'June',
+    value: '#B71C1C',
+  },
+  {
+    name: 'July',
+    value: '#5D4037',
+  },
+ '#00BCD4',
