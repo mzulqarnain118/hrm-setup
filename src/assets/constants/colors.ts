@@ -601,3 +601,6 @@ AE',
     value: '#5D4037',
   },
  '#00BCD4',
+  },
+  {
+ name: 'September',
