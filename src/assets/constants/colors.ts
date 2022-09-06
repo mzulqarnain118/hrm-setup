@@ -604,3 +604,35 @@ AE',
   },
   {
  name: 'September',
+    value: '#1B5E20',
+  },
+  {
+    name: 'October',
+    value: '#6A1B9A',
+  },
+  {
+    name: 'November',
+    value: '#F57F17',
+  },
+  {
+    name: 'December',
+    value: '#1976D2',
+  },
+  {
+    name: 'Low Vegetation',
+    value: '#ff1b0b',
+  },
+  {
+    name: 'Moderate',
+    value: '#ffb500',
+  },
+  {
+    name: 'Good',
+    value: '#89ff1b',
+  },
+  {
+    name: 'Excellent',
+    value: '#1E88E5',
+  },
+  {
+  value: '#ffb500',
