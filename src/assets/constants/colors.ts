@@ -636,3 +636,23 @@ AE',
   },
   {
   value: '#ffb500',
+  },
+  {
+    name: 'Stress',
+    value: '#FF1B0B',
+  },
+  {
+    name: 'No Stress',
+    value: '#89ff1b',
+  },
+  {
+    name: 'High Vigour',
+    value: '#1E88E5',
+  },
+  {
+    name: 'Grain',
+    value: '#00A36C',
+  },
+  {
+    name: 'Silage',
+,
