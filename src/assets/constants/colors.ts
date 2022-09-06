@@ -656,3 +656,52 @@ AE',
   {
     name: 'Silage',
 ,
+  },
+  {
+    name: 'CSSG-676',
+    value: '#00ffff',
+  },
+  {
+    name: 'HS-2',
+    value: '#FF0000',
+  },
+
+  // export const YieldColorIds = [
+  //   128, '#6A1B9A', // Yield <500
+  //   129, '#0D47A1', // Yield 500-600
+  //   130, '#1B5E20', // Yield 600-700
+  //   131, '#ffeb3b', // Yield 700-800
+  //   132, '#F44336', // Yield 800-900
+  //   133, '#F5B041', // Yield 900-1000
+  //   134, '#29B6F6', // Yield 1000-1100
+  //   135, '#FF6A02' , // Yield >1100
+  //   '#E57373',
+
+  // ];
+
+  {
+    name: '<500',
+    value: '#6A1B9A',
+  },
+  {
+    name: '500-600',
+    value: '#0D47A1',
+  },
+  {
+    name: '600-700',
+    value: '#1B5E20',
+  },
+  {
+    name: '700-800',
+    value: '#ffeb3b',
+  },
+  {
+    name: '800-900',
+    value: '#F44336',
+  },
+  {
+    name: '900-000',
+    value: '#F5B041',
+  },
+  {
+
