@@ -705,3 +705,9 @@ AE',
   },
   {
 
+  {
+    name: '>1100',
+    value: '#FF6A02',
+  },
+  // #overlap
+ 150: "Overlap Spring Maize Wheat",
