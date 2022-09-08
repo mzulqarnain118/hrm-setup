@@ -736,3 +736,31 @@ AE',
   {
     name: 'Overlap Spring Maize Potato',
 ,
+  {
+    name: 'Overlap Spring Maize Empty Land',
+    value: '#884EA0',
+  },
+  {
+    name: 'Overlap Spring Maize Fall Maize',
+    value: '#85C1E9',
+
+    name: 'Early June',
+    value: '#FF0000',
+  },
+  {
+    name: 'Late June',
+    value: '#89ff1b',
+  },
+  {
+    name: 'Early July',
+    value: '#FFFF33',
+  },
+  {
+    name: 'Late July',
+    value: '#FFA500',
+  },
+  {
+    name: 'June-July',
+    value : '#DA8CF7'
+  }
+];
