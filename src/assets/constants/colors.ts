@@ -711,3 +711,28 @@ AE',
   },
   // #overlap
  150: "Overlap Spring Maize Wheat",
+  //   151: "Overlap Wheat Rice",
+  //   152: "Overlap Potato Rice",
+  //   153 : "Overlap Spring Maize Rice",
+  //   154 : "Overlap Spring Maize Potato",
+  //   155 : "Overlap Spring Maize Empty Land"
+  //   156 : "Overlap Spring Maize Fall Maize"
+  {
+    name: 'Overlap Spring Maize Wheat',
+    value: '#1F51FF',
+  },
+  {
+    name: 'Overlap Wheat Rice',
+    value: '#40E0D0',
+  },
+  {
+    name: 'Overlap Potato Rice',
+    value: '#FFFF33',
+  },
+  {
+    name: 'Overlap Spring Maize Rice',
+    value: '#C0392B',
+  },
+  {
+    name: 'Overlap Spring Maize Potato',
+,
