@@ -55,3 +55,4 @@ export const eSurveyGraphTypes = [
   { product_name: 'eSurvey', graphs: 'eSurvey by date' },
   { product_name: 'Harvest', graphs: 'Harvest Monitering' },
 ];
+import Tileset from 'src/app/_Interfaces/Tileset';
