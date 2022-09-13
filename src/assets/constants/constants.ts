@@ -56,3 +56,39 @@ export const eSurveyGraphTypes = [
   { product_name: 'Harvest', graphs: 'Harvest Monitering' },
 ];
 import Tileset from 'src/app/_Interfaces/Tileset';
+
+export const DEFAULT_REPORT = 'Crop Scan';
+export const PAKISTAN_CENTER = [69.3941914, 29.9689954];
+export const MAPBOX_USERNAME = 'ali-akber-79';
+
+// TODO : Change to this a backend API call
+export const BASE_STYLE_URL =
+  'mapbox://styles/ali-akber-79/clmqh6svs026o01r46xxxg1hg';
+export const DEFAULT_ZOOM = 3.1;
+export const AOI_ZOOM = 5;
+export const Esurvey_ZOOM = 10;
+export const SurveyId_Query_key = 'Field ID';
+// Either a source is a tileset or a geojson
+// Tileset refers to dataset on mapbox whereas geojson refers to a file
+
+// TODO : If flow is shifted to MBTiles then the whole thing needs to be updated
+export const initialTilesetStateEsurvey: Tileset = {
+  name: '',
+  visible: false,
+  FillPrefix: 'fill',
+  LinePrefix: 'polygons-line',
+  HoverPrefix: 'polygons-line-hover',
+  TilesetType: 'Esurvey',
+};
+
+export const initialTilesetStateRaster: Tileset = {
+  name: '',
+  visible: false,
+  FillPrefix: 'fill',
+  LinePrefix: 'polygons-line',
+  HoverPrefix: 'polygons-line-hover',
+  TilesetType: 'Raster',
+};
+
+export const menuList = [
+rd', title: 'Dashboard' },
