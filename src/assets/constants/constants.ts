@@ -92,3 +92,23 @@ export const initialTilesetStateRaster: Tileset = {
 
 export const menuList = [
 rd', title: 'Dashboard' },
+  { key: 'cropscan', icon: 'dashboard', title: 'Cropscan' },
+  { key: 'agrichain', icon: 'ic_recruitment', title: 'Agrichain' },
+  { key: 'yieldpro', icon: 'ic_calendar', title: 'Yield Pro' },
+  { key: 'reporting', icon: 'ic_calendar', title: 'Reporting' },
+];
+
+export const totalAreaGraphTypes = [
+  { product_name: 'Cropscan', graphs: 'Acreage by Classes/Crops' },
+  { product_name: 'Cropscan', graphs: 'Acreage by variety' },
+t_name: 'Cropscan', graphs: 'Acreage by Main Crop' },
+  { product_name: 'Sowing Date', graphs: 'Acreage by variety' },
+  { product_name: 'Arable Land', graphs: 'Acreage by classes/ crops' },
+];
+
+
+export const eSurveyGraphTypes = [
+  { product_name: 'Sowing Date', graphs: 'Sowing Analysis' },
+  { product_name: 'eSurvey', graphs: 'eSurvey by date' },
+  { product_name: 'Harvest', graphs: 'Harvest Monitering' },
+];
