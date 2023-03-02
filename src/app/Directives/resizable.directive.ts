@@ -56,3 +56,4 @@ vent: MouseEvent) => {
     window.addEventListener('mouseup', mouseUpListener);
   }
 }
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
