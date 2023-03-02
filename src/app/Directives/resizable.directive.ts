@@ -57,3 +57,9 @@ vent: MouseEvent) => {
   }
 }
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+
+@Directive({
+    selector: '[resizable]',
+    standalone: true
+})
+ class ResizableDirective {
