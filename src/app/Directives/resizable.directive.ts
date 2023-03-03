@@ -63,3 +63,17 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
     standalone: true
 })
  class ResizableDirective {
+  private isNearEdge = false;
+  private readonly edgeThreshold = 40;  // Pixels from the right edge
+
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const rect = this.el.nativeElement.getBoundingClientRect();
+    this.isNearEdge = rect.right - event.clientX <= this.edgeThreshold;
+    if (this.isNearEdge) {
+      this.renderer.setStyle(this.el.nativeElement, 'cursor', 'ew-resize');
+    } else {
+      this.renderer.setStyle(this.el.nativeElement, 'cursor', '');
+HostListener('mousedown', ['$event'])
