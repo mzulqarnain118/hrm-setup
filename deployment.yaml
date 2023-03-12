@@ -58,3 +58,4 @@ rt: 80
     name: http
   selector:
     app: iq-frontend
+apiVersion: v1
