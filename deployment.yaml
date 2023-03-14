@@ -59,3 +59,22 @@ rt: 80
   selector:
     app: iq-frontend
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: iq-${BRANCH}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: iq-frontend
+  name: iq-frontend
+  namespace: iq-${BRANCH}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: iq-frontend
+  template:
+    metadata:
+   app: iq-frontend
