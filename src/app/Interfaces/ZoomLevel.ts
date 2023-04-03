@@ -9,3 +9,4 @@ export default interface IZoomLevel {
     next_zoom: number;
     add: string[];
     rem: string[];
+  }
