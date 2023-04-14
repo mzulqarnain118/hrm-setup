@@ -72,3 +72,4 @@ ileset.name,
     map.addLayer(layerConfig as mapboxgl.LineLayer);
   }
 }
+import { Injectable } from '@angular/core';
