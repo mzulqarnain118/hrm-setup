@@ -4,7 +4,8 @@ import { DashboardService } from './Dashboard/dashboard.service';
 import { RoleTypes } from 'src/app/_Types/types';
 import { SharedStateService } from './shared-state.service';
 import { roles } from '../_Interfaces/dashboard';
-ctable({
+
+@Injectable({
   providedIn: 'root',
 })
 export class RoleService {
@@ -27,7 +28,8 @@ export class RoleService {
       return false;
     }
     return rolesData.some((res) =>
-werCase()
+      box
+        .toLowerCase()
         .includes(
           roleType === 'platfrom_name'
             ? res.platform_name.toLowerCase()
@@ -48,3 +50,6 @@ werCase()
   isEsurvey() {
     return this.roles$.pipe(
       map((res) => res.some((value) => value.product_name.toLowerCase() === 'esurvey'))
+    );
+  }
+}
