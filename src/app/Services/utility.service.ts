@@ -51,3 +51,4 @@ nst center = bounds.getCenter();
 
   static AddMarkerToMap(){
   }
+import { Injectable } from '@angular/core';
