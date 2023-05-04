@@ -65,3 +65,4 @@ export interface BoxItem {
   type: string;
   url?: string;
   product_name: string;
+}
