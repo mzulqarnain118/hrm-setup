@@ -43,3 +43,4 @@ export type TilesetType = "Raster" | "Vector" | "Esurvey"
 
 export type RoleTypes = "product_name" | "platfrom_name"
 
+export type SearchOption = "Coordinate" | "SurveyId"

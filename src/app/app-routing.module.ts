@@ -52,3 +52,4 @@ path: 'console',
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
+import { NgModule } from '@angular/core';
