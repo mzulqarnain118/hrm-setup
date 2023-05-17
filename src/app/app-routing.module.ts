@@ -80,3 +80,26 @@ const routes: Routes = [
     data: { roles: ['cropscan'] },
   },
    loadChildren: () =>
+      import('./yieldpro/yieldpro.module').then((m) => m.YieldproModule),
+    canActivate: [ROLE_GUARD_TOKEN, authGuard],
+    data: { roles: ['yieldpro'] },
+  },
+  {
+    path: 'console',
+    loadChildren: () =>
+      import('./console/console.module').then((m) => m.ConsoleModule),
+    canActivate: [ROLE_GUARD_TOKEN, authGuard],
+    data: { roles: ['console'] },
+  },
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+    DashboardModule,
+    CropscanModule,
+    YieldproModule,
+    ConsoleModule
+erModule],
+})
+export class AppRoutingModule {}
