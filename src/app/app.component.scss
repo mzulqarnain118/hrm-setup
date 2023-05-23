@@ -21,26 +21,3 @@
   background-color: white;
   z-index: 1;
 }
-.mainmap {
-  flex: 3;
-  max-height: 83vh;
-}
-
-.sidepanel {
-  width: 300px !important ;
-  height: max !important;
-  background-color: rgb(185, 120, 120);
-  display: flex !important;
-  height: 83vh;
-}
-.tableFixHead {
-  overflow: auto;
-  max-height: 14vh;
-  border: 1px solid #eeeeee;
-}
-.tableFixHead thead th {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 1;
-}
