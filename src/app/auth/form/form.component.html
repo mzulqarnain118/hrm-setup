@@ -1,0 +1,31 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="myForm">
+  <div class="container">
+    <div class="form">
+      <label for="Username"> Username </label>
+      <input id="Username" formControlName="Username" class="form-input" placeholder="Username">
+
+      <label for="password"> Password </label>
+      <div class="password-container">
+        <input id="password" type="{{ showPassword ? 'text' : 'password' }}" formControlName="password" class="form-input" placeholder="Password">
+        <span (click)="togglePasswordVisibility()">
+          @if (showPassword) {
+            <img src="../../../assets/images/hidden.png"/>
+          }
+          @if (!showPassword) {
+            <img src="../../../assets/images/visible.png"/>
+          }
+        </span>
+      </div>
+
+      <button type="submit" [disabled]="!myForm.valid">Submit</button>
+
+
+      @if (errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+      }
+
+    </div>
+  </div>
+</form>
