@@ -11,3 +11,4 @@ import { FormComponent } from '../form/form.component';
 export class SigninComponent {
   constructor() {}
 }
+import { Component } from '@angular/core';
