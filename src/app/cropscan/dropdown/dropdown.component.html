@@ -1,0 +1,47 @@
+<div class="flex-container">
+  <div class="dropdown-container">
+    <label class="dropdown-label" for="season-selection">Crop</label>
+    <select
+      id="crop-selection"
+      [ngModel]="currentCrop$ | async"
+      (change)="onCropSelect($event)"
+      >
+      @for (option of cropOptions$ | async; track option) {
+        <option [ngValue]="option">
+          {{ option }}
+        </option>
+      }
+    </select>
+  </div>
+
+  <div class="dropdown-container">
+    <label class="dropdown-label" for="season-selection">Season</label>
+    <select
+      id="season-selection"
+      [ngModel]="currentSeason$ | async"
+      (change)="onSeasonSelect($event)"
+      >
+      @for (option of seasonsOptions$ | async; track option) {
+        <option [ngValue]="option">
+          {{ option }}
+        </option>
+      }
+    </select>
+  </div>
+
+  <div class="dropdown-container">
+    <label class="dropdown-label" for="date-selection">Date</label>
+    <select
+      id="date-selection"
+      [ngModel]="currentDate$ | async"
+      (change)="onDateSelect($event)"
+      >
+
+      @for (option of dateOptions$ | async; track option) {
+        <option [value]="option">
+          {{ option }}
+        </option>
+      }
+    </select>
+  </div>
+</div>
