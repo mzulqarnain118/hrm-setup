@@ -1,0 +1,8 @@
+<div #map></div>
+<div #popup class="popup"> </div>
+<!-- <button class="btn-toggle"  (click)="ImageryToggleHandler()">Imagery</button> -->
+@if (!isYieldproRoute) {
+  <app-layer-toggle/>
+}
+@if (isYieldproRoute) {
+  <app-ndvi-chart/>
