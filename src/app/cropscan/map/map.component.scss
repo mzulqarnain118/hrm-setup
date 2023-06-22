@@ -1,1 +1,49 @@
 #map {
+  ::ng-deep {
+    .marker {
+      background-image: url("/assets/images/marker.png");
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  }
+}
+
+#map{
+  width: 100vh;
+  height: 500vh;
+  max-width: 100vh;
+  max-height: 100vh;
+  position: absolute;
+  border-radius: 4vh;
+  margin-right: 5vh;
+}
+.popup {
+  position: fixed; /* Use fixed positioning */
+  top: 142px;
+  left: 383px;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 400px;
+  height: 100px;
+  font-size: 12px;
+  opacity: 0;
+  z-index: 1; /* To make sure the popup appears on top of the map */
+  transition: opacity 0.3s;
+}
+
+::ng-deep {
+  .marker {
+    background-image: url("/assets/images/marker.png");
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+
+.mainmap {
+  flex: 3;
+  width: 500px;
+right: 5vh;
