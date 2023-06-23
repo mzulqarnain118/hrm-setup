@@ -47,3 +47,49 @@
   flex: 3;
   width: 500px;
 right: 5vh;
+}
+.btn-toggle {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 1; /* ensure it overlays the map */
+  padding: 5px 10px; /* Increased padding for a slightly bigger touch target */
+  
+  /* Typography */
+  font-size: 0.9rem;
+  font-weight: 500; 
+  text-align: center;
+  color:black;
+
+ 
+  background-color: #95cbf6;
+  border: 2px solid #ddd; 
+  border-radius: 100px; /* Slightly increased radius for a more rounded appearance */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+
+  /* Transition for smoother hover effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover State */
+.btn-toggle:hover {
+  background-color: #d1eaff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* A slightly more pronounced shadow on hover */
+}
+
+
+
+.btn-toggle:focus {
+  outline: none; /* Remove default browser focus ring */
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6); /* Custom focus ring */
+}
+
+
+
+
+.zoom-btn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+lor: black;
