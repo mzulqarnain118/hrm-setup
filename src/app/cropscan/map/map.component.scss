@@ -93,3 +93,41 @@ right: 5vh;
   top: 50%;
   right: 0;
 lor: black;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Makes the button fully round */
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  outline: white solid 1px;
+}
+
+/* Add hover effect */
+.zoom-btn:hover {
+  background-color: #333;
+}
+
+.zoom-btn-out{
+  position: fixed;
+  top: 50%;
+  right: 1px;
+ateY(-50%);
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Makes the button fully round */
+  padding:  5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  outline: white solid 1px;
+}
+
+/* Add hover effect */
+.zoom-btn-out:hover {
+  background-color: #333;
+}
+
+
+::ng-deep .mapboxgl-ctrl-group button{
+  background-color: #1BC693;
+  color: white;
