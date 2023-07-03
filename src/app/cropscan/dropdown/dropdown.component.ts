@@ -229,3 +229,6 @@ import { SharedStateService } from 'src/app/_Services/shared-state.service';
 import { SidepanelService } from 'src/app/_Services/sidepanel.service';
 import { AsyncPipe } from '@angular/common';
 dule } from '@angular/forms';
+
+export interface DropdownData {}
+omponent({
