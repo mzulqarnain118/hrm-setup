@@ -232,3 +232,48 @@ dule } from '@angular/forms';
 
 export interface DropdownData {}
 omponent({
+    selector: 'app-dropdown',
+    templateUrl: './dropdown.component.html',
+    styleUrls: ['./dropdown.component.scss'],
+    standalone: true,
+    imports: [FormsModule, AsyncPipe],
+})
+export class DropdownComponent {
+  // Selected value
+  currentSeason$ = new Observable<string>();
+  currentDate$ = new Observable<string>();
+  currentCrop$ = new Observable<string>();
+
+  // Options from backend
+  seasonsOptions$ = new Observable<string[]>();
+  cropOptions$ = new Observable<string[]>();
+  dateOptions$ = new Observable<string[]>();
+
+  combinedObservables$ = new Observable<string[]>();
+
+  constructor(
+    private apiService: ApiService,
+    private mapService: MapService,
+    private sidePanelService: SidepanelService,
+    private sharedStateService: SharedStateService
+  ) {}
+
+  ngOnInit(): void {
+    this.defaultReport();
+
+    this.combinedObservables$ = combineLatest([
+      this.currentCrop$.pipe(distinctUntilChanged()),
+      this.currentSeason$.pipe(distinctUntilChanged()),
+      this.sidePanelService.ReportType$,
+    ]);
+
+    this.combinedObservables$.pipe().subscribe((res) => {
+      // array destructuring
+      const [currentCrop, currentSeason, reportType] = res;
+      this.cropOptions$ = this.apiService
+        .getAllCrops(reportType)
+        .pipe(map((res) => res.data));
+      this.dateOptions$ = this.apiService
+        .getAllDates(currentCrop, currentSeason, reportType)
+        .pipe(map((res) => res.data));
+rop$
