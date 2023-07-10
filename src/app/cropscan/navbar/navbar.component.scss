@@ -385,3 +385,28 @@ img{
   align-items: center;
   justify-content: space-between;
  display: flex;
+  gap: 2vh;
+  width: 60%;
+  align-items: center;
+}
+
+.logo {
+  padding-left: 10%;
+}
+
+.dropdown {
+  padding-left: 14%;
+}
+
+.navbar .right {
+  gap: 1vh;
+  display: flex;
+  align-items: center;
+  right: 0;
+}
+// keep last chikld at let
+
+.btn-toggle {
+  position: relative;
+  /* Typography */
+nt-weight: 500;
