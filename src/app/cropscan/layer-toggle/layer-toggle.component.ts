@@ -20,7 +20,7 @@ import { NgClass, AsyncPipe } from '@angular/common';
 })
 export class LayerToggleComponent {
   isVisible: boolean = true;
- = false;
+  isToggledOn: boolean = false;
 
   protected tileSetSubject=new BehaviorSubject<Tileset[]>([]);
   combinedTilesets$ = this.tileSetSubject.asObservable();
