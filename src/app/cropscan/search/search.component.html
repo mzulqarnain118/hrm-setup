@@ -83,3 +83,32 @@
   </div>
 
 </div>
+
+
+<div class="search-container">
+  <select (change)="emitSearchOption($event)">
+    @for (option of searchOptions; track option) {
+      <option [ngValue]="option">
+        {{ option }}
+      </option>
+    }
+  </select>
+  <span class="line">|</span>
+  <div class="input-wrapper">
+    <div class="search-group">
+      <input
+        type="text"
+        [placeholder]="staticText + placeholder"
+        (keyup.enter)="emitSearchQuery($event)"
+        (ngModelChange)="onSearchTextChange($event)"
+        [(ngModel)]="searchText"
+        />
+      @if (searchText) {
+        <button (click)="clearInput()" class="clear-btn">
+          X
+        </button>
+      }
+    </div>
+  </div>
+
+</div>
