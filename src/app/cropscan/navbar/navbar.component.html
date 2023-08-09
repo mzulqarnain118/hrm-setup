@@ -17,22 +17,3 @@
 </div>
 
 </div>
-<div class="navbar">
-  <div class="left">
-  <img src="assets/images/FarmdarLogo.jpg" alt="Farmdar" (click)="reload()" />
-  <!-- <millLogo class="logo"/> -->
-  <app-dropdown class="dropdown"/>
-  <app-search />
-  </div>
-  <div class="right">
-    <label>Imagery</label>
-    <label class="switch">
-  <input type="checkbox" checked (change)="ImageToggle($event)"/><span class="slider round"></span></label>
-  <button class="btn-export" (click)="openDialog()">Export</button>
-<dialog #dialog class="custom-dialog">
-  <button class="close-button" (click)="closeDialog()">Close</button>
-  <app-export-data/>
-</dialog>
-</div>
-
-</div>
