@@ -1,1 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+.table-wrapper {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow-y: auto;
+  border: 1px solid #eeeeee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+
+  :nth-child(1) {
+    width: 10rem;
+    padding-left: 5%;
+  }
+
+ {
