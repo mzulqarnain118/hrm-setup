@@ -15,3 +15,14 @@
   }
 
  {
+    width: 4rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 4px; // reduced padding
+ion: background-color 0.3s;
