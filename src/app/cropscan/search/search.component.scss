@@ -111,3 +111,10 @@ ight: 3.5vh;
 }
 }
 :host{.search-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border:1px solid #1BC693;
+r-radius: 8px;
