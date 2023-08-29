@@ -8,7 +8,7 @@ import {
   map,
   switchMap,
 } from 'rxjs';
-emoizationService } from 'src/app/_Services/Memoization/memoization.service';
+import { MemoizationService } from 'src/app/_Services/Memoization/memoization.service';
 import { ApiService } from 'src/app/_Services/api.service';
 import { SharedStateService } from 'src/app/_Services/shared-state.service';
 import { SidepanelService } from 'src/app/_Services/sidepanel.service';
@@ -44,7 +44,7 @@ export class T2CropsComponent {
     this.clickBoundaryName$ = this.SidePanelService.clickedBoundaryName$;
     this.clickedBoundaryId$ = this.SidePanelService.clickedBoundaryId$.pipe();
 
-multiple emissions. Need to fix
+    // TODO: This is a temp fix for multiple emissions. Need to fix
     // why values are being emitted multiple times
     // probably layering effect
     this.combinedObservableForT2$ = combineLatest([
@@ -73,7 +73,7 @@ multiple emissions. Need to fix
     //         currentBoundary,
     //         reportType,
     //         reportDate,
-yId
+    //         clickedBoundaryId
     //       )
     //       .subscribe((res) => {
     //         if (!res.data) return;
@@ -112,7 +112,9 @@ yId
                 reportType,
                 reportDate,
                 clickedBoundaryId
-              filter((res) => !!res.data),
+              )
+              .pipe(
+                filter((res) => !!res.data),
                 map((res) => res.data)
               )
           );
