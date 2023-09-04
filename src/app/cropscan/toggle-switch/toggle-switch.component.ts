@@ -127,3 +127,4 @@ MenuImage = false;
     return colorObj ? colorObj.value : '#757070'; // default to black if key is not found
   }
 }
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, OnInit } from '@angular/core';
