@@ -145,3 +145,18 @@ export class ToggleSwitchComponent implements OnInit {
   @Input() tileset: Tileset;
   @Output() clickedEvent = new EventEmitter<Tileset>();
 : string;
+  showMenuImage: boolean = false;
+  color= new FormControl('#0000ff') // Default value for color
+
+  @ViewChild('input') input: ElementRef;
+
+  constructor(private fb: FormBuilder, private mapService:MapService) {
+    // Initialize the form group in the constructor
+  }
+
+  ngOnInit(): void {
+    this.color.valueChanges.pipe(distinctUntilChanged()).subscribe((res:string|null)=>{
+      this.color.setValue(res);
+      if(res)
+      this.mapService.HandleTilesetColor(this.tileset)
+OnChanges(): void {
