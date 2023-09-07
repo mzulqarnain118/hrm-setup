@@ -160,3 +160,35 @@ export class ToggleSwitchComponent implements OnInit {
       if(res)
       this.mapService.HandleTilesetColor(this.tileset)
 OnChanges(): void {
+    if (this.tileset && this.tileset.name) {
+      let separator = this.tileset.name.includes('_') ? '_' : '-';
+      let parts = this.tileset.name.split(separator);
+      parts.shift(); // Remove the first element
+      this.modifiedTileset = parts.join(separator);
+    }
+
+    this.color.setValue(this.getColorForKey(this.tileset.name))
+  }
+
+  onToggle(): void {
+eset.visible = !this.tileset.visible;
+    this.clickedEvent.emit(this.tileset);
+  }
+
+  showImage() {
+    this.showMenuImage = true;
+  }
+
+  hideImage() {
+    this.showMenuImage = false;
+  }
+
+  onColorPicker(tileset: Tileset) {
+    this.input.nativeElement.click();
+  }
+
+  getColorForKey(key: string): string {
+    const colorObj = colorMap.find(item => key.toLowerCase().includes(item.name.toLowerCase()));
+    return colorObj ? colorObj.value : '#757070'; // default to black if key is not found
+  }
+}
