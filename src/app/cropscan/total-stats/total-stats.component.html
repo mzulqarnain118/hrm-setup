@@ -12,17 +12,3 @@
     }
   </div>
 }
-@if (data$ | async; as data) {
-  <div class="TotalStats">
-    @for (obj of data | keyvalue; track obj) {
-      <div
-        class="dataItem"
-        [ngClass]="{ cur: isClickable(obj.key) }"
-        (click)="handleClick(obj)"
-        >
-        <span class="key">{{ obj.key }}</span>
-        <span class="value">{{ obj.value | addCommas}}</span>
-      </div>
-    }
-  </div>
-}
