@@ -31,3 +31,4 @@ const routes: Routes = [
     ]
 })
 export class DashboardModule {}
+import { NgModule } from '@angular/core';
