@@ -45,3 +45,4 @@ pe(reportType);
     //this.sharedStateService
   }
 }
+import { Component } from '@angular/core';
