@@ -1,1 +1,21 @@
 <div class="box">
+  <div class="max">
+    <div class="row justify-between h-4">
+      <p class="chart-title">Historical weather</p>
+      <div class="outer-div">
+        <input
+          type="radio"
+          id="temperature"
+          name="weather"
+          value="temperature"
+        />
+        <label for="temperature">Temperature</label>
+
+        <input type="radio" id="rainfall" name="weather" value="rainfall" />
+        <label for="rainfall">Rainfall</label>
+        <div class="toggle">
+          <p
+            class="item"
+            (click)="setIsActive('1W')"
+            [class.active]="isActive('1W')"
+    1W
