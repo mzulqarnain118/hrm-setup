@@ -35,3 +35,6 @@ describe('DropdownFilterComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 ould create', () => {
+    expect(component).toBeTruthy();
+  });
+});
