@@ -19,3 +19,36 @@
             (click)="setIsActive('1W')"
             [class.active]="isActive('1W')"
     1W
+          </p>
+          <p
+            class="item"
+            (click)="setIsActive('1M')"
+            [class.active]="isActive('1M')"
+          >
+            1M
+          </p>
+          <p
+            class="item"
+            (click)="setIsActive('1Y')"
+            [class.active]="isActive('1Y')"
+          >
+            1Y
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [style.height]="700">
+    <ngx-charts-line-chart
+      [scheme]="colorScheme"
+      [showGridLines]="false"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+owXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [results]="weatherLineChart"
+    >
+    </ngx-charts-line-chart>
+  </div>
+</div>
