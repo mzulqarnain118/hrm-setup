@@ -278,3 +278,19 @@ export class T1AreasComponent {
   private memoizationService = inject(MemoizationService);
   protected toPascalNotation = toPascalCase;
 ng, string, string, string]>;
+  limit: number = 10;
+  offset: number = 0;
+  data = new BehaviorSubject<BoundaryData[]>([]);
+  data$ = this.data.asObservable();
+
+  keysOrder: string[];
+  prevScrollPosition: number = 0;
+  maxCount: number = 0;
+  lastBoundaryName: string = '';
+  clickBoundaryName$ = new Observable<string>();
+  reportType: string;
+  season: string;
+  reportDate: string;
+  currentBoundary: string;
+  boundrayName: string;
+ crop: string;
