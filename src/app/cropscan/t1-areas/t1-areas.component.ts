@@ -294,3 +294,6 @@ ng, string, string, string]>;
   currentBoundary: string;
   boundrayName: string;
  crop: string;
+  getValue(object: any, key: string): any {
+    return object?.[key];
+
