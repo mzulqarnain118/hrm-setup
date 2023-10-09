@@ -297,3 +297,27 @@ ng, string, string, string]>;
   getValue(object: any, key: string): any {
     return object?.[key];
 
+
+  constructor(
+    private SidepanelService: SidepanelService,
+    private apiService: ApiService,
+    private roleService: RoleService,
+    private cdr: ChangeDetectorRef,
+  ) {
+    this.clickBoundaryName$ = this.SidepanelService.clickedBoundaryName$;
+    this.combinedData$ = this.SidepanelService.combinedData$;
+    this.combinedData$
+      .pipe(
+        filter((res) => res.every((element) => element !== '')),
+        debounceTime(300),
+        switchMap((res) => {
+          const [crop, reportType, season, reportDate, currentBoundary] = res;
+          this.crop = crop;
+          this.reportType = reportType;
+          this.season = season;
+          this.reportDate = reportDate;
+          this.currentBoundary = currentBoundary;
+          this.offset = 0;
+
+          this.lastBoundaryName = currentBoundary;
+ON.stringify({
