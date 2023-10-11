@@ -321,3 +321,49 @@ ng, string, string, string]>;
 
           this.lastBoundaryName = currentBoundary;
 ON.stringify({
+            crop: this.crop,
+            reportType: this.reportType,
+            season: this.season,
+            reportDate: this.reportDate,
+            currentBoundary: this.currentBoundary,
+            limit: this.limit,
+            offset: this.offset,
+          });
+
+          const memoizedObservable = this.memoizationService.memoize(
+            this.key,
+            this.apiService.getT1Data(
+              crop,
+              this.reportType,
+              this.season,
+              this.reportDate,
+              this.currentBoundary,
+              this.limit,
+              this.offset,
+            ),
+          );
+
+          return memoizedObservable;
+        }),
+        filter((res) => !!res), // This line can be adjusted or removed based on your needs
+      )
+      .subscribe((res) => {
+        this.data.next(res.data);
+        this.maxCount = res.total;
+        this.cdr.detectChanges();
+      });
+
+    this.clickBoundaryName$
+      .pipe(filter((boundaryName) => boundaryName != ''))
+      .subscribe((boundaryName) => {
+        // Get the current data array
+        const currentData = this.data.getValue();
+        this.boundrayName = boundaryName;
+        // Find the index of the boundary in the data array
+        const boundaryIndex = currentData.findIndex(
+          (item) => item['Boundary Name'] === boundaryName,
+        );
+
+        if (boundaryIndex > -1) {
+          const boundaryObj = currentData[boundaryIndex];
+;
