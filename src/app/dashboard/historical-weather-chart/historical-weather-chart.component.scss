@@ -1,0 +1,62 @@
+.row-space-between {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #5dc398; /* Change this color to your desired default color */
+}
+/* Change the color of the radio button's inner circle (when selected) */
+input[type="radio"]:checked {
+  background-color: #5dc398; /* Change this color to your desired selected color */
+}
+
+input[type="radio"]:checked + label {
+  color: #5dc398; /* Change this color to your desired label color */
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  background: #f2f4f6;
+  border-radius: 4rem;
+  gap: 1rem;
+  padding: 5px 23px;
+  cursor: pointer;
+}
+
+.outer-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  gap: 3px;
+}
+
+p {
+  margin: 0px;
+}
+
+.item.active {
+  padding: 0px 11px;
+  background: #5dc398;
+  border-radius: 22px;
+  color: white;
+}
+
+.chart-description {
+  margin-top: 40px;
+}
+
+.h-4 {
+  height: 4.5rem;
+}
