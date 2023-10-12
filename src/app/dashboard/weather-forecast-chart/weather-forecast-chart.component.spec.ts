@@ -41,3 +41,23 @@ describe('WeatherForecastChartComponent', () => {
   });
 });
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { WeatherForecastChartComponent } from './weather-forecast-chart.component';
+
+ribe('WeatherForecastChartComponent', () => {
+  let component: WeatherForecastChartComponent;
+  let fixture: ComponentFixture<WeatherForecastChartComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+    imports: [WeatherForecastChartComponent]
+});
+    fixture = TestBed.createComponent(WeatherForecastChartComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
