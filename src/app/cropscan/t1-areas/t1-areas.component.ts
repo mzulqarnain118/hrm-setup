@@ -367,3 +367,45 @@ ON.stringify({
         if (boundaryIndex > -1) {
           const boundaryObj = currentData[boundaryIndex];
 ;
+          currentData.unshift(boundaryObj);
+          this.data.next(currentData);
+        } else if (this.boundrayName) {
+          this.key = JSON.stringify({
+            reportType: this.reportType,
+            season: this.season,
+            reportDate: this.reportDate,
+            currentBoundary: this.currentBoundary,
+            limit: this.limit,
+            offset: this.offset,
+            boundrayName: this.boundrayName,
+          });
+          this.loadData();
+        }
+      });
+    this.checkEsurvey();
+  }
+
+  @HostListener('scroll', ['$event'])
+  onElementScroll($event: any) {
+    const scrollPosition = $event.target.scrollTop;
+    if (
+      scrollPosition > this.prevScrollPosition &&
+      this.data.getValue().length < this.maxCount
+    ) {
+      this.boundrayName = '';
+      this.offset += 1;
+
+      this.key = JSON.stringify({
+        reportType: this.reportType,
+        season: this.season,
+        reportDate: this.reportDate,
+        currentBoundary: this.currentBoundary,
+        limit: this.limit,
+        offset: this.offset,
+        boundrayName: this.boundrayName,
+      });
+      this.loadData();
+    }
+
+    this.prevScrollPosition = scrollPosition;
+zationService
