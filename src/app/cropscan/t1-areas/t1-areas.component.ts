@@ -409,3 +409,68 @@ ON.stringify({
 
     this.prevScrollPosition = scrollPosition;
 zationService
+      .memoize(
+        this.key,
+        this.apiService.getT1Data(
+          this.crop,
+          this.reportType,
+          this.season,
+          this.reportDate,
+          this.currentBoundary,
+          this.limit,
+          this.offset,
+          this.boundrayName,
+        ),
+      )
+      .pipe(
+        map((newData) => newData.data),
+        distinctUntilChanged(),
+      )
+      .subscribe(async (newData) => {
+        const currentData = this.data.getValue();
+        const updatedData = [...newData, ...currentData];
+        const uniqueData = updatedData.reduce((accumulator, currentObj) => {
+          const existingObj = accumulator.find(
+            (obj: { id: any }) => obj.id === currentObj.id,
+          );
+
+          if (!existingObj) {
+            accumulator.push(currentObj);
+          }
+
+          return accumulator;
+        }, []);
+        this.data.next(uniqueData);
+        if (this.boundrayName) await this.reload();
+      });
+  }
+
+  private reload() {
+    this.clickBoundaryName$
+      .pipe(filter((boundaryName) => boundaryName != ''))
+      .subscribe((boundaryName) => {
+        const currentData = this.data.getValue();
+        this.boundrayName = boundaryName;
+        const boundaryIndex = currentData.findIndex(
+          (item) => item['Boundary Name'] === boundaryName,
+        );
+
+        if (boundaryIndex > -1) {
+          const boundaryObj = currentData[boundaryIndex];
+          currentData.splice(boundaryIndex, 1);
+          currentData.unshift(boundaryObj);
+          this.data.next(currentData);
+        }
+      });
+  }
+
+  checkEsurvey() {
+    this.roleService.isEsurvey().subscribe((res) => {
+      this.keysOrder = res
+        ? ['Boundary Name', 'Crop Area', 'Esurvey Area']
+        : ['Boundary Name', 'Crop Area'];
+    });
+  }
+
+  ngAfterViewInit() {}
+}
