@@ -78,3 +78,4 @@ export class WeatherForecastChartComponent {
     },
   ];
 }
+import { Component } from '@angular/core';
