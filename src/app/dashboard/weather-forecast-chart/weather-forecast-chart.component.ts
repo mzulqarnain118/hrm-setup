@@ -114,3 +114,43 @@ export class WeatherForecastChartComponent {
           name: 'Feb',
           value: 50,
 : 'Mar',
+          value: 12,
+        },
+        {
+          name: 'Apr',
+          value: 3,
+        },
+        {
+          name: 'May',
+          value: 23,
+        },
+        {
+          name: 'Jun',
+          value: 45,
+        },
+        {
+          name: 'Jul',
+          value: 10,
+        },
+        {
+          name: 'Aug',
+          value: 50,
+        },
+        {
+          name: 'Sep',
+          value: 12,
+        },
+        {
+          name: 'Oct',
+          value: 3,
+        },
+        {
+          name: 'Nov',
+          value: 23,
+e: 'Dec',
+          value: 45,
+        },
+      ],
+    },
+  ];
+}
