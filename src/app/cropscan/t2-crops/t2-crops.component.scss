@@ -83,3 +83,31 @@ tent: center;
   font-size: 12px; /* Adjust font size as needed */
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+.table-wrapper {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow-y: auto;
+  border: 1px solid #eeeeee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 4px; // reduced padding
+    transition: background-color 0.3s;
+  }
+
+  th {
+    font-weight: bold; // Bold font for headers
+    font-size: 0.9em;
+    background-color: transparent;
+    color: #050505;
+    text-align: start;
+    padding-left: 5%;
+ normal; // Normal font for data cells
