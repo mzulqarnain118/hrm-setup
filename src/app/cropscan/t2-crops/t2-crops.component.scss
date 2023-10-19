@@ -111,3 +111,22 @@ tent: center;
     text-align: start;
     padding-left: 5%;
  normal; // Normal font for data cells
+    font-size: 0.8em;
+  }
+
+  tbody,
+  tr,
+  td {
+    padding-left: 5%;
+  }
+
+  tr:hover td {
+    background-color: #1BC693;
+    color: white;
+  }
+  td:nth-child(2),
+  th:nth-child(2) {
+    padding-left: 0;
+  }
+  // Line only between rows
+ld) td {
