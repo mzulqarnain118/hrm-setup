@@ -130,3 +130,28 @@ tent: center;
   }
   // Line only between rows
 ld) td {
+    border-bottom: none;
+  }
+  th {
+    border-bottom: 1px solid #eeeeee;
+  }
+}
+.highlighted {
+  background-color: #ffff99; // You can change this to whatever color you want
+}
+
+.tableFixHead {
+  overflow: auto;
+  max-height: 14rem;
+  border: 1px solid #eeeeee;
+}
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+.circle {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+argin-right: 10px;
