@@ -109,3 +109,18 @@ div>
   </div>
 }
 @if (!isLoginPage()) {
+  <div class="outer">
+    <div class="main-container">
+      <div>
+        <h1>{{ username$ | async }}</h1>
+      </div>
+      <div class="inner-container">
+        <div class="left-menu">
+          @for (menu of menus; track menu) {
+            <div
+              class="item"
+          (click)="
+            setIsActive(
+              menu.key,
+              roleService.isAccess(menu.key,roles, 'platfrom_name')
+         "
