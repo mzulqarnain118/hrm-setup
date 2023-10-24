@@ -155,3 +155,9 @@ ld) td {
   width: 20px; /* Adjust size as needed */
   height: 20px; /* Adjust size as needed */
 argin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+circle span {
+  font-size: 12px; /* Adjust font size as needed */
+}
