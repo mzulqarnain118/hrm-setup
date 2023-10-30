@@ -174,3 +174,42 @@ container {
     color: #D5D5D5;
   }
 :host {
+  .outer {
+    padding: 0rem 2rem;
+  }
+  .main-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .inner-container {
+    flex-direction: row;
+    gap: 2rem;
+    color: #686868;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .item {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: #999999;
+    cursor: pointer;
+  }
+
+  .item:hover {
+    color: #69b897; /* Active item text color */
+  }
+
+  .item.active {
+    color: #5dc398; /* Active item text color */
+  }
+t(0.2) sepia(1) hue-rotate(120deg) contrast(1.1);
