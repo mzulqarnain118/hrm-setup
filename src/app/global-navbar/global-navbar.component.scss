@@ -213,3 +213,48 @@ container {
     color: #5dc398; /* Active item text color */
   }
 t(0.2) sepia(1) hue-rotate(120deg) contrast(1.1);
+  }
+
+  .left-menu {
+    display: flex;
+    gap: 2rem;
+    margin-left: 7rem;
+  }
+
+  .right-buttons {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  p {
+    padding: 0px;
+  }
+
+  button {
+    background-color: white;
+    border-radius: 6px;
+    border-color: white;
+    color: #5dc398;
+    padding: 9px 21px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  button:hover {
+    background-color: #1bc693;
+    color: white;
+  }
+
+  .logo {
+    margin: 13px 3px;
+  }
+  .disabled {
+    color: #D5D5D5;
+  }
+
+  .hover:hover {
+    cursor: auto;
+    color: #D5D5D5;
+  }
+}
