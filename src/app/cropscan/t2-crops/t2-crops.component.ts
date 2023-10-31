@@ -45,3 +45,32 @@ export class T2CropsComponent {
     this.clickedBoundaryId$ = this.SidePanelService.clickedBoundaryId$.pipe();
 
 multiple emissions. Need to fix
+    // why values are being emitted multiple times
+    // probably layering effect
+    this.combinedObservableForT2$ = combineLatest([
+      this.clickedBoundaryId$.pipe(),
+      this.SidePanelService.combinedData$.pipe(),
+    ]);
+
+    // fix subscribe in subscribe anti pattern
+    // this.combinedObservableForT2$
+    //   .pipe(
+    //     debounceTime(300),
+    //     filter(([clickedBoundaryId, combinedData]) => {
+    //       const [reportType, season, reportDate, currentBoundary] =
+    //         combinedData;
+    //       // return true if not null
+    //       return !!reportType && !!season && !!reportDate && !!currentBoundary;
+    //     })
+    //   )
+    //   .subscribe(([clickedBoundaryId, combinedData]) => {
+    //     const [reportType, season, reportDate, currentBoundary] = combinedData;
+    //     //  if (currentBoundary !== 'aoi') {
+    //    if (!this.sharedStateService.TableEmissions) return;
+    //     this.apiService
+    //       .getT2Data(
+    //         season,
+    //         currentBoundary,
+    //         reportType,
+    //         reportDate,
+yId
