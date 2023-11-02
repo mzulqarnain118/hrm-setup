@@ -20,3 +20,9 @@ describe('GlobalNavbarComponent', () => {
   });
 });
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { GlobalNavbarComponent } from './global-navbar.component';
+
+describe('GlobalNavbarComponent', () => {
+  let component: GlobalNavbarComponent;
+fixture: ComponentFixture<GlobalNavbarComponent>;
