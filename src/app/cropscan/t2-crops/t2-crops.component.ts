@@ -74,3 +74,66 @@ multiple emissions. Need to fix
     //         reportType,
     //         reportDate,
 yId
+    //       )
+    //       .subscribe((res) => {
+    //         if (!res.data) return;
+    //         this.data.next(res.data);
+    //       });
+    //     // }
+    //   });
+    this.combinedObservableForT2$
+      .pipe(
+        debounceTime(300),
+        filter(([clickedBoundaryId, combinedData]) => {
+          const [crop,reportType, season, reportDate, currentBoundary] =
+            combinedData;
+          return !!crop && !!reportType && !!season && !!reportDate && !!currentBoundary;
+        }),
+        filter(() => this.sharedStateService.TableEmissions),
+        switchMap(([clickedBoundaryId, combinedData]) => {
+          const [crop,reportType, season, reportDate, currentBoundary] =
+            combinedData;
+          const key = JSON.stringify({
+            crop,
+            season,
+            currentBoundary,
+            reportType,
+            reportDate,
+            clickedBoundaryId,
+          });
+
+          return this.memoizationService.memoize(
+            key, // Use the generated key for memoization
+            this.apiService
+              .getT2Data(
+                crop,
+                season,
+                currentBoundary,
+                reportType,
+                reportDate,
+                clickedBoundaryId
+              filter((res) => !!res.data),
+                map((res) => res.data)
+              )
+          );
+        })
+      )
+      .subscribe((data) => {
+        this.data.next(data);
+      });
+  }
+
+  ngOnInit() {}
+
+  isDialogOpen(obj:any){
+    this.sharedStateService.updateTable2Data(obj);
+    this.sharedStateService.updateIsDialogOpen(true);
+  }
+
+  getColorForKey(key: string): string {
+    const colorObj = colorMap.find(item => item.name === key);
+    return colorObj ? colorObj.value : '#000000'; // default to black if key is not found
+  }
+  
+  ngAfterViewInit() {}
+}
