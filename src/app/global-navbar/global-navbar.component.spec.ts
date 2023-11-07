@@ -26,3 +26,10 @@ import { GlobalNavbarComponent } from './global-navbar.component';
 describe('GlobalNavbarComponent', () => {
   let component: GlobalNavbarComponent;
 fixture: ComponentFixture<GlobalNavbarComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+    imports: [GlobalNavbarComponent]
+});
+    fixture = TestBed.createComponent(GlobalNavbarComponent);
+ponent = fixture.componentInstance;
