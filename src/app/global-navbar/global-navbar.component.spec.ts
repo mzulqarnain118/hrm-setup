@@ -33,3 +33,10 @@ fixture: ComponentFixture<GlobalNavbarComponent>;
 });
     fixture = TestBed.createComponent(GlobalNavbarComponent);
 ponent = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
