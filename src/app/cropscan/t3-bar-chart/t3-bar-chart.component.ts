@@ -149,3 +149,4 @@ his.offset += 1;
 
   // paint params
   colorMap = colorMap;
+import {
