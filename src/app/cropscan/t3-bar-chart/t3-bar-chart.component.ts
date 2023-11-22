@@ -199,3 +199,24 @@ export class T3BarChartComponent implements OnInit {
       .pipe(
         debounceTime(100),
 ement !== '')),
+        filter(() => this.sharedStateService.TableEmissions),
+        switchMap((res) => {
+          const [crop,reportType, season, reportDate, currentBoundary] = res;
+          this.crop=crop;
+          this.reportType = reportType;
+          this.season = season;
+          this.reportDate = reportDate;
+          this.currentBoundary = currentBoundary;
+          this.offset = 0;
+
+          const key = JSON.stringify({
+            crop,
+            season,
+            currentBoundary,
+            reportType,
+            reportDate,
+          });
+
+          return this.memoizationService.memoize(
+            key, // Use the generated key for memoization
+ervice.getT3Data(
