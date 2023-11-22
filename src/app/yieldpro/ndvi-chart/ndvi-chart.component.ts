@@ -188,3 +188,4 @@ export class NdviChartComponent {
     return this.activeIndex === index;
   }
 }
+import { Component } from '@angular/core';
