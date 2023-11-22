@@ -220,3 +220,27 @@ ement !== '')),
           return this.memoizationService.memoize(
             key, // Use the generated key for memoization
 ervice.getT3Data(
+              crop,
+              reportType,
+              season,
+              reportDate,
+              currentBoundary,
+              this.limit,
+              this.offset
+            )
+          );
+        })
+      )
+      .subscribe((apiResponse) => {
+        //todo: this needs to be update in the BE
+        const filteredData = apiResponse.data?.filter(
+          (res: any) => res.series[0].value != 0
+        );
+        this.multi = filteredData;
+        this.unFilteredData = apiResponse.data;
+        this.maxCount = apiResponse.total;
+        this.isDataAvailable = true;
+        this.cdr.detectChanges();
+      });
+  }
+', ['$event'])
