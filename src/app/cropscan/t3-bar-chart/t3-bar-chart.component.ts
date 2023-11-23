@@ -244,3 +244,32 @@ ervice.getT3Data(
       });
   }
 ', ['$event'])
+  onElementScroll($event: any) {
+    const scrollPosition = $event.target.scrollTop;
+    if (
+      scrollPosition > this.prevScrollPosition &&
+      this.unFilteredData?.length < this.maxCount
+    ) {
+      this.offset += 1;
+      this.loadData();
+    }
+
+    this.prevScrollPosition = scrollPosition;
+  }
+
+  private loadData() {
+    this.apiService
+      .getT3Data(
+        this.crop,
+        this.reportType,
+        this.season,
+        this.reportDate,
+        this.currentBoundary,
+        this.limit,
+        this.offset
+      )
+      .subscribe((apiResponse) => {
+        //todo: this needs to be update in the BE
+        this.unFilteredData = [...this.unFilteredData, ...apiResponse.data];
+        const filteredData = apiResponse.data?.filter(
+eries[0].value != 0
