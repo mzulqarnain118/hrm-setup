@@ -204,3 +204,12 @@ export class NdviChartComponent {
   single: any[];
   protected view: any[] = [700, 400];
 wXAxis = true;
+  protected showYAxis = true;
+  protected gradient = false;
+  protected showLegend = false;
+  protected showXAxisLabel = true;
+  protected xAxisLabel: "Years";
+  protected showYAxisLabel = true;
+  protected yAxisLabel: "Salary";
+  protected graphDataChart: any[];
+ndex: number = 0;
