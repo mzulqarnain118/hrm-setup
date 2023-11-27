@@ -16,3 +16,12 @@
     </label>
     <span class="toggle-name" [class.active]="tileset.visible">{{ modifiedTileset }}</span>
     <input class="color-picker" type="color" id="colorpicker" [formControl]="color" #input></div>
+<div class="toggle-wrapper" (mouseenter)="showImage()" (mouseleave)="hideImage()">
+    <span class="menu-image" [class.visible]="showMenuImage">
+        <img src="../../../assets/images/menuDragDrop.png"/>
+    </span>    <label class="switch">
+        <input type="checkbox" [checked]="tileset.visible" (change)="onToggle()">
+        <span class="slider"></span>
+    </label>
+    <span class="toggle-name" [class.active]="tileset.visible">{{ modifiedTileset }}</span>
+    <input class="color-picker" type="color" id="colorpicker" [formControl]="color" #input></div>
