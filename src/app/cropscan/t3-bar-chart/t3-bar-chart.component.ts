@@ -273,3 +273,32 @@ ervice.getT3Data(
         this.unFilteredData = [...this.unFilteredData, ...apiResponse.data];
         const filteredData = apiResponse.data?.filter(
 eries[0].value != 0
+        );
+        this.multi = [...this.multi, ...filteredData];
+        this.maxCount = apiResponse.total;
+        this.cdr.detectChanges();
+      });
+  }
+
+  ngAfterViewInit() {}
+  heightMultiplyingConstant = 350;
+  view: [number, number] = [
+    230,
+    this.multi.length * this.heightMultiplyingConstant,
+  ];
+
+  getChartHeight(): string {
+    return `${this.multi.length * 2.3}vh`;
+  }
+
+  showXAxis: boolean = false;
+  showYAxis: boolean = true;
+  gradient: boolean = false;
+  showLegend: boolean = false;
+  showXAxisLabel: boolean = false;
+  yAxisLabel: string = 'Country';
+  showYAxisLabel: boolean = false;
+Map = colorMap;
+
+  onSelect(event: any) {}
+}
