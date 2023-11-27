@@ -213,3 +213,42 @@ wXAxis = true;
   protected yAxisLabel: "Salary";
   protected graphDataChart: any[];
 ndex: number = 0;
+  colorScheme: Color = {
+    name: 'Variation',
+    selectable: true,
+    group: ScaleType.Linear,
+    domain: ['#1BC693'],
+  };
+  
+  constructor(){
+    this.single=[{
+      name: 'Kumaresan',
+      series: [
+        {
+          name: '2016',
+          value: '0',
+        },
+        {
+          name: '2017',
+          value: '0.1',
+        },
+        {
+          name: '2018',
+          value: '0.2',
+        },
+        {
+         value: '0.5',
+        },
+      ],
+    },]
+  }
+  
+
+  setActive(index: number): void {
+    this.activeIndex = index;
+  }
+
+  isActive(index: number): boolean {
+    return this.activeIndex === index;
+  }
+}
