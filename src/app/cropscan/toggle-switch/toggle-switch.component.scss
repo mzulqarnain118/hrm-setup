@@ -70,3 +70,40 @@ put:checked + .slider {
   cursor: pointer;
 }
 .toggle-wrapper {
+  display: flex;
+  align-items: center;
+  color: black;
+  max-height: 20rem;
+  .toggle-name {
+    margin-left: 10px; // Spacing between the switch and the name
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; // Adjusted for smaller size
+  height: 22px; // Adjusted for smaller size
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: 0.4s;
+    border-radius: 22px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 18px; // Adjusted for smaller size
+      width: 18px; // Adjusted for smaller size
+gle circle
