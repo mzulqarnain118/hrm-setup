@@ -122,3 +122,19 @@
   .TopContainer::-webkit-scrollbar {
     width: 0;
 : transparent; /* Optional: just to ensure there's no residual scrollbar coloring */
+  }
+  .TopContainer {
+    scrollbar-width: none !important;
+  }
+  
+  .mainContainer {
+    display: flex;
+    flex-direction: row !important;
+    height: 83vh;
+  }
+  
+  .navbar {
+    margin: 0;
+  }
+  
+   overflow: auto;
