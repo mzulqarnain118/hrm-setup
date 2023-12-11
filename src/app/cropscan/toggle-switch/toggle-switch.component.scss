@@ -107,3 +107,40 @@ put:checked + .slider {
       height: 18px; // Adjusted for smaller size
       width: 18px; // Adjusted for smaller size
 gle circle
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: #1bc693;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(18px); // Adjusted for smaller size
+  }
+}
+
+.toggle-name.active {
+  color: #5dc398; /* Active item text color */
+}
+.menu-image {
+  margin-right: 7px;
+}
+.menu-image {
+  opacity: 0; /* Initially hide the image */
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.menu-image.visible {
+e */
+  cursor: pointer;
+}
+
+.color-picker{
+  margin-left: auto;
+  cursor: pointer;
+}
