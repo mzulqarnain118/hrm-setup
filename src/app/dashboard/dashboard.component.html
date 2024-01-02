@@ -1,0 +1,44 @@
+<div class="outer">
+  <div class="boxes">
+    @for (box of boxes; track box) {
+      <div
+        class="box"
+      [ngClass]="{
+        'disabled': !roleService.isAccess(box.product_name,roles),
+        'hover': roleService.isAccess(box.product_name,roles)
+      }"
+        >
+        @if (box.url) {
+          <a
+            [ngClass]="{ isUrl: box.url, isActiveUrl:roleService.isAccess(box.product_name,roles)}"
+            [href]="box.url"
+            (click)="onClick(box.title,roleService.isAccess(box.product_name,roles))"
+            >
+            <p class="title">{{ box.title }}</p>
+            <p class="count">{{ box.count | addCommas }}</p>
+            <p class="type">{{ box.type }}</p>
+          </a>
+        }
+        @if (!box.url) {
+          <div (click)="onClick(box.title, roleService.isAccess(box.product_name,roles))">
+            <p class="title">{{ box.title }}</p>
+            <p class="count">{{ box.count | addCommas}}</p>
+            <p class="type">{{ box.type }}</p>
+          </div>
+        }
+      </div>
+    }
+
+  </div>
+  <app-dropdown-filter/>
+  <div class="row-nowrap margin-top">
+    @if (isTotalAreaVsCropscan()) {
+      <app-area-vs-crops-chart class="chart-container" />
+    }
+    @if (isEsurvey()) {
+      <app-e-survey-chart class="chart-container" />
+    }
+    <app-historical-weather-chart class="chart-container" />
+    <app-weather-forecast-chart class="chart-container" />
+  </div>
+</div>
