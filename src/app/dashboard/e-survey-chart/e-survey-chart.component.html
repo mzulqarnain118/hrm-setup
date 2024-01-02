@@ -25,3 +25,30 @@ ts-bar-vertical
     </ngx-charts-bar-vertical>
   </div>
 </div>
+<div class="box">
+  <div class="max">
+    <div class="row justify-between mt-3">
+      <select>
+        @for (graph of filteredGraphTypes; track graph) {
+          <option>{{graph.graphs}}</option>
+        }
+      </select>
+      <div>
+      </div>
+    </div>
+  </div>
+  <div [style.height]="700">
+    <ngx-charts-bar-vertical
+      [scheme]="colorScheme"
+      [showGridLines]="false"
+      [results]="single"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      >
+    </ngx-charts-bar-vertical>
+  </div>
+</div>
