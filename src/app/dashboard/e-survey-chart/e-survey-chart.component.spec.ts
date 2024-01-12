@@ -8,7 +8,7 @@ describe('ESurveyChartComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-s: [ESurveyChartComponent]
+    imports: [ESurveyChartComponent]
 });
     fixture = TestBed.createComponent(ESurveyChartComponent);
     component = fixture.componentInstance;
