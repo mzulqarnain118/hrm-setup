@@ -13,7 +13,7 @@ export class WeatherForecastChartComponent {
   showYAxis: boolean = true;
   gradient: boolean = true;
   showLegend: boolean = true;
-l: boolean = true;
+  showXAxisLabel: boolean = true;
   showYAxisLabel: boolean = true;
   yAxisLabel: string = 'Average Temperature';
   colorScheme: Color = {
@@ -25,7 +25,7 @@ l: boolean = true;
   weatherLineChart = [
     {
       name: 'Weather',
-: [
+      series: [
         {
           name: 'Jan',
           value: 10,
@@ -35,7 +35,7 @@ l: boolean = true;
           value: 50,
         },
         {
-name: 'Mar',
+          name: 'Mar',
           value: 12,
         },
         {
@@ -69,10 +69,12 @@ name: 'Mar',
         {
           name: 'Nov',
           value: 23,
-e: 'Dec',
+        },
+        {
+          name: 'Dec',
           value: 45,
         },
       ],
-},
+    },
   ];
 }
