@@ -109,3 +109,26 @@ container {
     justify-content: space-between;
     width: 100%;
 {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: #999999;
+    cursor: pointer;
+  }
+
+  .item:hover {
+    color: #69b897; /* Active item text color */
+  }
+
+  .item.active {
+    color: #5dc398; /* Active item text color */
+  }
+
+  .item.active img {
+    filter: invert(0.2) sepia(1) hue-rotate(120deg) contrast(1.1);
+  }
+
+  .left-menu {
+    display: flex;
+    gap: 2rem;
+  }
