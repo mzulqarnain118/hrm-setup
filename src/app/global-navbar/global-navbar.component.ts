@@ -76,3 +76,4 @@ subscribe();
     this.user.logout();
   }
 }
+import { Component, OnInit, inject } from '@angular/core';
