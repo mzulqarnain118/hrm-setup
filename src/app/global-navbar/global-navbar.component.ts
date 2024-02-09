@@ -89,3 +89,29 @@ import { LogoComponent } from '../cropscan/logo/logo.component';
 import { NgClass, AsyncPipe } from '@angular/common';
 
 
+    selector: 'app-global-navbar',
+    templateUrl: './global-navbar.component.html',
+    styleUrls: ['./global-navbar.component.scss'],
+    standalone: true,
+    imports: [
+        NgClass,
+        LogoComponent,
+        AsyncPipe,
+    ],
+})
+export class GlobalNavbarComponent implements OnInit {
+  roles: roles[];
+  private user = inject(UserService);
+  protected sharedService = inject(SharedStateService);
+  protected roleService = inject(RoleService);
+  private router = inject(Router);
+  username$ = this.sharedService.usernameObservable;
+
+  menus = menuList;
+  activeItem!: string;
+
+  constructor() {
+    const username = localStorage.getItem('iq-username');
+    if (username) {
+      this.sharedService.updateUsername(username);
+= false;
