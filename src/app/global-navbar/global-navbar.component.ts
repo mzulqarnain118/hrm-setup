@@ -115,3 +115,41 @@ export class GlobalNavbarComponent implements OnInit {
     if (username) {
       this.sharedService.updateUsername(username);
 = false;
+    combineLatest([this.sharedService.menu$, this.roleService.roles$]).pipe(
+      filter(([menu, roles]) => menu !== null && roles !== null),
+      map(([menu, roles]) => {
+        this.activeItem = menu;
+        this.roles = roles;
+        
+        if (roles.length === 0 && !fetchCalled && !this.isLoginPage()) {
+          fetchCalled=true;
+          this.roleService.fetchRoles().subscribe((response) => {
+            this.roleService.updateRoles(response);
+            this.roles = response;
+          });
+        }
+      })
+    ).subscribe();
+  }
+
+  ngOnInit(): void {
+    this.sharedService.menu$.subscribe((res) => {
+      this.activeItem = res;
+nPage(): boolean {
+    let isAuthenticated = localStorage.getItem('isAuthenticated');
+    return (
+      !this.menus.some((menu) => this.router.url.includes(menu.key)) ||
+      !isAuthenticated
+    );
+  }
+
+  setIsActive(item: string, isAccess: boolean) {
+    if (!isAccess) return;
+    this.sharedService.updateMenu(item);
+    this.router.navigateByUrl(item);
+  }
+
+  signOut() {
+    this.user.logout();
+  }
+}
