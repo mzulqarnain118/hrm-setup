@@ -11,3 +11,4 @@ export function toPascalCase(value: string) {
         )
         .replace(new RegExp(/\w/), (s) => s.toUpperCase());
 }
+export function toPascalCase(value: string) {
