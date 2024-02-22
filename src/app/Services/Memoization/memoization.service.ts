@@ -13,3 +13,4 @@ cache.set(key, observable.pipe(shareReplay({ bufferSize: 1, refCount: true })));
     }
     return this.cache.get(key) as Observable<T>;
   }
+}

@@ -73,3 +73,4 @@ export class LayerService {
     map.addLayer(layerConfig as mapboxgl.LineLayer);
   }
 }
+import { Injectable } from '@angular/core';
