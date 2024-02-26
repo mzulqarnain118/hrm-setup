@@ -183,3 +183,94 @@ px;
     }
   }
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background-color: white;
+    margin-top: 14px;
+    border-radius: 15px;
+}
+.toggle-container {
+    position: fixed;
+    bottom: 0.5rem;
+    right: 1rem;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 78.5%;
+    z-index: 1000;
+    border-radius: 5px 0px 0px 0px !important;
+  }
+
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown-container select,.dropdown-container input {
+  width: 100%;
+  min-width: 10vh;
+  height: 38px;
+  background: #1BC693;
+  border:1px solid white;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  padding-left: 10px;
+  font-size: 17px;
+  padding-right: 5px;
+}
+
+
+}
+
+  // .dropdown-container input:hover,.dropdown-container select:hover  {
+  //   background-color: #1BC693;
+  //   border: 1px solid #1BC693;
+  //   color: white;
+  // }
+
+.dropdown-container {
+  position: relative;
+  border-radius: 15px;
+  background: #1BC693;
+  padding: 15px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.chart {
+    flex: 1;
+    width: 77%;
+    height: 280px;
+    margin-top: 40px; /* Adjust spacing between charts */
+    gap: 20px;
+  }
+
+  .ngx-charts-outer{
+    width: 92% !important;
+  }
+  
+
+  .date{
+    padding: 7px 2rem;
+    cursor: pointer;
+  }
+
+  .active{
+    background-color:#1BC693;
+    color: white;
+    padding: 7px;
+    border-radius: 100px;
+  }
+
+  :host{
+    label{
+      color: white;
+    }
