@@ -107,3 +107,12 @@ export class LayerService {
   }
 
 map: mapboxgl.Map) {
+    const layerType = 'polygons-line';
+    const LinePrefix = layerType + tileset.name;
+    const { paint } = getPaintAndLineWidth(tileset.name, layerType, tileset.TilesetType);
+
+    let layerConfig: layerConfig = {
+      id: LinePrefix,
+      type: 'line',
+      source: tileset.name,
+out: {
