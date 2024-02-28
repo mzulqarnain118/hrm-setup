@@ -116,3 +116,35 @@ map: mapboxgl.Map) {
       type: 'line',
       source: tileset.name,
 out: {
+        visibility: tileset.visible ? 'visible' : 'none',
+      },
+      paint: paint,
+    };
+    if (tileset.TilesetType == 'Tileset' || tileset.TilesetType == 'Esurvey') {
+      layerConfig['source-layer'] = tileset.name;
+    }
+    map.addLayer(layerConfig as mapboxgl.LineLayer);
+  }
+
+
+  AddHoverLayer(tileset: Tileset , map: mapboxgl.Map) {
+    const layerType: string = 'polygons-line-hover';
+    const LineHoverPrefix: string = layerType + tileset.name;
+    const { paint } = getPaintAndLineWidth(tileset.name, layerType, tileset.TilesetType);
+
+    let layerConfig: layerConfig = {
+      id: LineHoverPrefix,
+
+      source: tileset.name,
+      layout: {
+        visibility: 'visible',
+      },
+      paint: paint,
+      filter: ['==', 'id', ''],
+    };
+    if (tileset.TilesetType == 'Tileset' || tileset.TilesetType == 'Esurvey') {
+      layerConfig['source-layer'] = tileset.name;
+    }
+    map.addLayer(layerConfig as mapboxgl.LineLayer);
+  }
+}
