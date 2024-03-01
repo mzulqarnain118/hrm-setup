@@ -437,3 +437,4 @@ export class TilesetService {
     this.VectorTilesetService.removeTileset(tileset, map);
   }
 }
+import { Injectable } from '@angular/core';
