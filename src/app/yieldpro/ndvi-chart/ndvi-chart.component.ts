@@ -126,3 +126,4 @@ resan',
     return this.activeIndex === index;
   }
 }
+import { Component } from '@angular/core';
