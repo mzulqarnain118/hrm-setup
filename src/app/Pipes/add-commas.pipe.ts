@@ -15,3 +15,4 @@ export class AddCommasPipe implements PipeTransform {
     return formatNumberWithCommas(value);
   }
 }
+import { Pipe, PipeTransform } from '@angular/core';
