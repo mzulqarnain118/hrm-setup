@@ -438,3 +438,38 @@ export class TilesetService {
   }
 }
 import { Injectable } from '@angular/core';
+import Tileset from '../../_Interfaces/Tileset';
+import * as mapboxgl from 'mapbox-gl';
+import { SourceType } from 'src/app/_Types/types';
+import { RasterTilesetService } from './raster-tileset.service';
+import { ApiService } from '../api.service';
+import { VectorTilesetService } from './vector-tileset.service';
+import { MAPBOX_USERNAME } from 'src/assets/constants/constants';
+import { LayerService } from './layer.service';
+import { UtilityService } from '../utility.service';
+import { renderPopupHtml } from 'src/app/_utils/popUpHtml';
+import { Observable, filter, map, tap } from 'rxjs';
+import { SharedStateService } from '../shared-state.service';
+import { getPaintAndLineWidth } from 'src/app/_utils/paintHandler';
+import { layerConfig } from 'src/app/_Types/types';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class TilesetService {
+  constructor(
+    private rasterTilesetService: RasterTilesetService,
+    private apiService: ApiService,
+    private layerService: LayerService,
+    private VectorTilesetService: VectorTilesetService,
+    private SharedStateService: SharedStateService
+  ) {}
+  // function that takes tileset IDs and returns appropriate settings
+  initializeTilesets(tileset_ids: string[]): Tileset[] {
+    const tilesetMapping = tileset_ids.map((tilesetId) => ({
+      name: tilesetId,
+      visible: this.visibilitySettings(tilesetId),
+      // if its points then prefixes are "" else they are "fill-" and "line-"
+      // FillPrefix: tilesetId.toLowerCase().includes('points') ? '' : `fill`,
+      FillPrefix: this.getFillPrefix(tilesetId),
+werCase().includes('points')
