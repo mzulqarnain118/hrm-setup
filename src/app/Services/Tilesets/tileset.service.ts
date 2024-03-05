@@ -473,3 +473,30 @@ export class TilesetService {
       // FillPrefix: tilesetId.toLowerCase().includes('points') ? '' : `fill`,
       FillPrefix: this.getFillPrefix(tilesetId),
 werCase().includes('points')
+      //   ? ''
+      //   : `polygons-line`,
+      LinePrefix: this.getLinePrefix(tilesetId),
+      // HoverPrefix: tilesetId.toLowerCase().includes('points')
+      //   ? ''
+      //   : `polygons-line-hover`,
+      HoverPrefix: this.getHoverPrefix(tilesetId),
+      TilesetType: 'Tileset' as SourceType,
+    }));
+
+    return tilesetMapping;
+  }
+
+  getFillPrefix(tileset_name: string): string {
+    return tileset_name.toLowerCase().includes('points') ||
+      tileset_name.toLowerCase().includes('roads')
+      ? ''
+      : 'fill';
+  }
+
+  getLinePrefix(tileset_name: string): string {
+    return tileset_name.toLowerCase().includes('points') ||
+      tileset_name.toLowerCase().includes('roads')
+      ? ''
+      : 'polygons-line';
+  }
+ame: string): string {
