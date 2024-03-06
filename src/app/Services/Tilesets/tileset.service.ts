@@ -500,3 +500,18 @@ werCase().includes('points')
       : 'polygons-line';
   }
 ame: string): string {
+    return tileset_name.toLowerCase().includes('points') ||
+      tileset_name.toLowerCase().includes('roads')
+      ? ''
+      : 'polygons-line-hover';
+  }
+  /**
+   * @description function that takes tileset IDs and returns default visibility settings
+        NOTE: Points sources are catered here when they come along as tileset IDS
+        as some clients have esurvey polygons and points
+   * @param tileset_id 
+   * @returns 
+   */
+  visibilitySettings(tileset_id: string): boolean {
+    return tileset_id.includes('points') ||
+d.toLowerCase().includes('other') ||
