@@ -544,3 +544,10 @@ d.toLowerCase().includes('other') ||
       return;
     }
 LayoutProperty(
+      `${tileset.FillPrefix}${tileset.name}`,
+      'visibility'
+    );
+
+    if (visibility === undefined) visibility = 'visible';
+
+(!(visibility === 'visible')) {
