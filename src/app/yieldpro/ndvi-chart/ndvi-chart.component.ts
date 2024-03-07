@@ -136,3 +136,30 @@ import { NgClass } from '@angular/common';
     templateUrl: './ndvi-chart.component.html',
     styleUrls: ['./ndvi-chart.component.scss'],
 alone: true,
+    imports: [NgClass, FormsModule, LineChartModule]
+})
+export class NdviChartComponent {
+  single: any[];
+  protected view: any[] = [700, 400];
+  protected showXAxis = true;
+  protected showYAxis = true;
+  protected gradient = false;
+  protected showLegend = false;
+  protected showXAxisLabel = true;
+  protected xAxisLabel: "Years";
+  protected showYAxisLabel = true;
+  protected yAxisLabel: "Salary";
+  protected graphDataChart: any[];
+  activeIndex: number = 0;
+  colorScheme: Color = {
+    name: 'Variation',
+    selectable: true,
+    group: ScaleType.Linear,
+    domain: ['#1BC693'],
+  };
+  
+  constructor(){
+    this.single=[{
+      name: 'Kumaresan',
+      series: [
+2016',
