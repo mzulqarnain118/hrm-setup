@@ -515,3 +515,32 @@ ame: string): string {
   visibilitySettings(tileset_id: string): boolean {
     return tileset_id.includes('points') ||
 d.toLowerCase().includes('other') ||
+      tileset_id.toLowerCase().includes('orchards') ||
+      tileset_id.toLowerCase().includes('cotton') ||
+      tileset_id.toLowerCase().includes('banana') ||
+      tileset_id.toLowerCase().includes('canola') ||
+      tileset_id.toLowerCase().includes('rice') ||
+      tileset_id.toLowerCase().includes('urban') ||
+      tileset_id.toLowerCase().includes('temporal') ||
+      tileset_id.toLowerCase().includes('roads')
+      ? false
+      : true;
+  }
+
+  changeTilesetColor(tileset: Tileset, map: mapboxgl.Map) {
+    // map.setPaintProperty('otherveg', 'fill-color', tileset.FillColor);
+  }
+  // This toggles raster as well as vector tilesets
+  toggleTileset(tileset: Tileset, map: mapboxgl.Map) {
+    let newVisibility = 'none';
+
+    // TODO: Refactor this
+    if (tileset.name.toLowerCase().includes('roads')) {
+      const visibility = map.getLayoutProperty(`${tileset.name}`, 'visibility');
+      if (!(visibility === 'visible')) {
+        newVisibility = 'visible';
+      }
+      map.setLayoutProperty(`${tileset.name}`, 'visibility', newVisibility);
+      return;
+    }
+LayoutProperty(
