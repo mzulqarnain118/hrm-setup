@@ -163,3 +163,28 @@ export class NdviChartComponent {
       name: 'Kumaresan',
       series: [
 2016',
+          value: '0',
+        },
+        {
+          name: '2017',
+          value: '0.1',
+        },
+        {
+          name: '2018',
+          value: '0.2',
+        },
+        {
+          name: '2019',
+          value: '0.5',
+        },
+      ],
+    },]
+  }
+  
+
+  setActive(index: number): void {
+    this.activeIndex = index;
+ number): boolean {
+    return this.activeIndex === index;
+  }
+}
