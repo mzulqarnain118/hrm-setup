@@ -551,3 +551,18 @@ LayoutProperty(
     if (visibility === undefined) visibility = 'visible';
 
 (!(visibility === 'visible')) {
+      newVisibility = 'visible';
+    }
+    if (tileset.name.toLowerCase().includes('points')) {
+      map.moveLayer(tileset.name);
+    }
+
+    map.setLayoutProperty(
+      `${tileset.FillPrefix}${tileset.name}`,
+      'visibility',
+      newVisibility
+    );
+
+    // Early return if tileset is raster as it does not have line and hover layers
+    if (tileset.TilesetType === 'Raster') {
+   }
