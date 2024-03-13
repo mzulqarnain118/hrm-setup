@@ -566,3 +566,28 @@ LayoutProperty(
     // Early return if tileset is raster as it does not have line and hover layers
     if (tileset.TilesetType === 'Raster') {
    }
+    map.setLayoutProperty(
+      `${tileset.LinePrefix}${tileset.name}`,
+      'visibility',
+      newVisibility
+    );
+    map.setLayoutProperty(
+      `${tileset.HoverPrefix}${tileset.name}`,
+      'visibility',
+      newVisibility
+    );
+    return;
+  }
+
+  // Function to update raster tilesets
+  UpdateRaster(tileset: Tileset, map: mapboxgl.Map, prevTileset: Tileset) {
+    this.rasterTilesetService.changeRaster(tileset, map, prevTileset);
+  }
+
+  RemoveRaster(tileset: Tileset, map: mapboxgl.Map) {
+    console.log('removing raster', tileset);
+    this.rasterTilesetService.removeRaster(tileset, map);
+  }
+
+  // Wrapper function to add tilesets
+t_ids: Tileset[],
