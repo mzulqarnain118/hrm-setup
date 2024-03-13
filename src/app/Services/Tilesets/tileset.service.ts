@@ -591,3 +591,15 @@ LayoutProperty(
 
   // Wrapper function to add tilesets
 t_ids: Tileset[],
+    map: mapboxgl.Map,
+    popupDiv: HTMLElement | null
+  ) {
+    console.log('adding tilesets', tileset_ids);
+    tileset_ids.forEach((tilesetId) => {
+      this.addTileset(tilesetId, map, popupDiv);
+    });
+  }
+
+  // Function to add tileset sources
+  addTileset(
+ Tileset,
