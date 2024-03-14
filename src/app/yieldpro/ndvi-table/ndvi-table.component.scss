@@ -125,3 +125,29 @@ verflow: auto;
   th:nth-child(2) {
     padding-left: 0;
 child) td {
+    border-bottom: none;
+  }
+  th {
+    border-bottom: 1px solid #eeeeee;
+  }
+hlighted {
+  background-color: #ffff99; // You can change this to whatever color you want
+}
+
+.tableFixHead {
+  overflow: auto;
+  max-height: 14rem;
+  border: 1px solid #eeeeee;
+}
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+
+:host{
+    h4{
+        margin-bottom: 2px;
+    }
