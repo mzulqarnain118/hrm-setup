@@ -257,3 +257,4 @@ getAoiAndStoreCenterasync() {
     });
   }
 }
+import { Injectable } from '@angular/core';
