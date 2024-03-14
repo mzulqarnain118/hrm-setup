@@ -622,3 +622,16 @@ t_ids: Tileset[],
     console.log('asml', tileset.name);
     map.addSource(tileset.name, {
 ',
+      url: `mapbox://${MAPBOX_USERNAME}.${tileset.name}`,
+      minzoom: 6,
+      maxzoom: 20,
+    });
+
+    // if esurvey then fix prefixes
+    if (tileset.name.toLowerCase().includes('esurvey')) {
+      tileset.FillPrefix = 'fill';
+      tileset.LinePrefix = 'polygons-line';
+      tileset.HoverPrefix = 'polygons-line-hover';
+    }
+
+ectorLayer(tileset, map);
