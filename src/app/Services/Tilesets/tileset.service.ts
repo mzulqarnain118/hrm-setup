@@ -603,3 +603,22 @@ t_ids: Tileset[],
   // Function to add tileset sources
   addTileset(
  Tileset,
+    map: mapboxgl.Map,
+    popupDiv: HTMLElement | null
+  ) {
+    if (tileset.name == '' || !tileset || map.getSource(tileset.name)) {
+      return;
+    }
+
+    // handle points source
+    if (tileset.name.toLowerCase().includes('points')) {
+      return this.HandlePointsSource(tileset, map, popupDiv);
+    }
+
+    if (tileset.name.toLowerCase().includes('roads')) {
+      return this.HandleRoadsSource(tileset, map, popupDiv);
+    }
+
+    console.log('asml', tileset.name);
+    map.addSource(tileset.name, {
+',
