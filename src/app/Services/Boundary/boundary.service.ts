@@ -258,3 +258,39 @@ getAoiAndStoreCenterasync() {
   }
 }
 import { Injectable } from '@angular/core';
+import { PAKISTAN_BOUNDS } from 'src/assets/constants/constBoundaries';
+import { ApiService } from '../api.service';
+import { LayerService } from '../Tilesets/layer.service';
+import Tileset from 'src/app/_Interfaces/Tileset';
+import { SharedStateService } from '../shared-state.service';
+import { UtilityService } from '../utility.service';
+import * as mapboxgl from 'mapbox-gl';
+import { renderPopupHtml } from 'src/app/_utils/popUpHtml';
+import { DEFAULT_ZOOM } from 'src/assets/constants/constants';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class BoundaryService {
+  constructor(
+    private backendService: ApiService,
+    private layerService: LayerService,
+    private SharedStateService: SharedStateService
+  ) {
+    
+  }
+
+  public allBoundarySources: string[] = [];
+
+  private _clickHandler: (e: any) => void;
+  private currentClientCenter: mapboxgl.LngLat;
+
+  async configureGeojsonSource(
+    BoundaryName: string,
+    map: mapboxgl.Map,
+    zoom: number,
+    popupDiv: HTMLElement | null
+  ) {
+    await this.addSource(BoundaryName, map);
+    this.AddBoundaryLayer(BoundaryName, zoom, map);
+e, map, popupDiv);
