@@ -635,3 +635,18 @@ t_ids: Tileset[],
     }
 
 ectorLayer(tileset, map);
+    //click event
+    this.addTilesetOnclick(tileset.name, map);
+    // hover
+    this.bindTilsetMouseEvents(tileset.name, map, popupDiv);
+  }
+
+  // FIXME: Add consistency to the constants
+  HandleRoadsSource(
+    tileset: Tileset,
+    map: mapboxgl.Map,
+    popupDiv: HTMLElement | null
+  ) {
+    // multiliinestring source
+    map.addSource(tileset.name, {
+ctor',
