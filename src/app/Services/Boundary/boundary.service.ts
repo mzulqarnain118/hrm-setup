@@ -334,3 +334,28 @@ e, map, popupDiv);
     map: mapboxgl.Map,
     popupDiv: HTMLElement | null
 source;
+
+    map.on('click', _sourceFill, (e) => {
+
+      if (e['stopProp'] == true) {
+        console.log('stopProp', _sourceFill);
+        return;
+      }
+  
+      map.getCanvas().style.cursor = 'zoom-in';
+      // Set popup display to block
+      popupDiv!.style.display = 'block';
+  
+      const properties = e.features![0].properties;
+      const currentBoundry = e.features![0].source;
+      const latLong = e.lngLat;
+      const obj = { lat: latLong.lat, lng: latLong.lng };
+  
+      const popupHtml: string = renderPopupHtml(
+        properties,
+        currentBoundry,
+        obj
+      );
+      UtilityService.preparePopup(popupHtml, popupDiv!);
+  
+ludes(this.SharedStateService.combinedTilesetNames)) {
