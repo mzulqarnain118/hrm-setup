@@ -650,3 +650,18 @@ ectorLayer(tileset, map);
     // multiliinestring source
     map.addSource(tileset.name, {
 ctor',
+      url: `mapbox://${MAPBOX_USERNAME}.${tileset.name}`,
+      minzoom: 7,
+      maxzoom: 22,
+    });
+    // add fill layer
+    map.addLayer({
+      id: tileset.name,
+      type: 'line',
+      source: tileset.name,
+      'source-layer': tileset.name,
+      paint: {
+        'line-color': '#0096FF',
+        'line-width': 1.5,
+      },
+
