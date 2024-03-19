@@ -743,3 +743,45 @@ popupDiv!);
         }),
         map((e: any) => {
 // Stopping the evnt bubbling
+          return {
+            features: _map.queryRenderedFeatures(e.point, {
+              layers: [_source],
+            }),
+            e,
+          };
+        }),
+        filter(({ features }) => features.length > 0),
+        tap(({ e }) => _map.flyTo({ center: e.lngLat, animate: true }))
+      )
+      .subscribe((values) => {});
+    //Store subscription in an array so we can clean it up later.
+    //this.clickSubscriptions.push(subscription);
+  }
+
+  AddVectorLayer(source: Tileset, map: mapboxgl.Map) {
+    this.layerService.AddFillLayer(source, map);
+    this.layerService.AddLineLayer(source, map);
+    this.layerService.AddHoverLayer(source, map);
+  }
+
+  // Function to handle points source
+  HandlePointsSource(
+    tileset: Tileset,
+    map: mapboxgl.Map,
+    popupDiv: HTMLElement | null
+  ) {
+    // resetting prefixes
+    tileset.FillPrefix = '';
+    tileset.LinePrefix = '';
+    tileset.HoverPrefix = '';
+    let minzoom = 9;
+    if (tileset.name.toLowerCase().includes('tubewell')) {
+      minzoom = 0;
+    }
+    map.addSource(tileset.name, {
+      type: 'vector',
+      url: `mapbox://${MAPBOX_USERNAME}.${tileset.name}`,
+      minzoom: minzoom,
+      maxzoom: 22,
+    });
+.name.includes('reval')) {
