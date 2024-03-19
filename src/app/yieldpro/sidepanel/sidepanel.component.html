@@ -1,0 +1,16 @@
+<div class="sidepanel">
+    <!-- <div class="icon" (click)="collapseSideBar()"><img *ngIf="(sharedState.isCollapse$|async)===false"
+        src="../../../assets/images/closeIcon.svg" /></div> -->
+          <label>Boundary Level</label>
+          <div class="container dropdown-container">
+              <select (change)="handleSelection($event)">
+                <option>--Select--</option>>
+              </select>
+            </div>
+        <app-selection-bar class="ReportSelection"/>
+        <div class="table1">
+        <h4>Products</h4>
+        <app-t2-crops/>
+        <app-ndvi-table/>
+      </div>
+</div>
