@@ -665,3 +665,49 @@ ctor',
         'line-width': 1.5,
       },
 
+        visibility: tileset.visible ? 'visible' : 'none',
+      },
+    });
+
+    // nill prefixes
+    tileset.FillPrefix = '';
+    tileset.LinePrefix = '';
+    tileset.HoverPrefix = '';
+  }
+
+  bindTilsetMouseEvents(
+    source: string,
+    _map: mapboxgl.Map,
+    popupDiv: HTMLElement | null
+  ) {
+    const _sourceFill = 'fill' + source;
+    const _sourceHover = 'polygons-line-hover' + source;
+
+    _map.on('click', _sourceFill, (e) => {
+      if (_map.getZoom() < 10) {
+        return;
+      }
+
+      // main check
+      // TODO:  HANDLE THIS PROPETLY THROUGH THE CURRENT OBSERVABLES ( IF POSSIBLE)
+      if (
+        !source.toLowerCase().includes('esurvey') &&
+        this.SharedStateService.isEsurveyVisible
+      ) {
+        return;
+      }
+      _map.getCanvas().style.cursor = 'zoom-in';
+      // set poup display back
+      popupDiv!.style.display = 'block';
+      const properties = e.features![0].properties;
+
+
+      const latLong = e.lngLat;
+      const obj = { lat: latLong.lat, lng: latLong.lng };
+      const currentBoundry = e.features![0].source;
+      const popupHtml: string = renderPopupHtml(
+        properties,
+        currentBoundry,
+        obj
+      );
+popupDiv!);
