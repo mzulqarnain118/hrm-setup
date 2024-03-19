@@ -294,3 +294,43 @@ export class BoundaryService {
     await this.addSource(BoundaryName, map);
     this.AddBoundaryLayer(BoundaryName, zoom, map);
 e, map, popupDiv);
+  }
+
+  async addSource(source: string, map: mapboxgl.Map) {
+    console.log('adding source', source);
+    // if source exists then return
+    if (map.getSource(source)) {
+      return;
+    }
+
+    const data = await this.getSourceGeoJson(
+      source,
+      this.SharedStateService.getCurrentSeasonValue(),
+      this.SharedStateService.getReportTypeValue(),
+      this.SharedStateService.getCurrentDateValue(),
+      this.SharedStateService.getCurrentCropValue(),
+    );
+    console.log('data', data);
+    // if (source == 'aoi') {
+    //   this.storeAOIcenter(data);
+    // }
+    try {
+      console.log("addinng source")
+      map.addSource(source, {
+        type: 'geojson',
+        data: data,
+      });
+    } catch (error) {
+      console.log('error', error);
+    }
+
+    if (source == 'Country') return;
+    this.allBoundarySources.push(source);
+  }
+
+  // Hover functionalities
+  bindMouseEvents(
+    source: string,
+    map: mapboxgl.Map,
+    popupDiv: HTMLElement | null
+source;
