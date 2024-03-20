@@ -711,3 +711,35 @@ ctor',
         obj
       );
 popupDiv!);
+
+      if (this.SharedStateService.combinedTilesetNames.includes(source)) {
+        e['stopProp'] = true;
+      }
+
+      _map.setFilter(_sourceHover, [
+        '==',
+        'id',
+        e.features![0].properties!['id'],
+      ]);
+
+    });
+  }
+  addTilesetOnclick(source: string, _map: mapboxgl.Map) {
+    const _source = 'fill' + source;
+
+    // TODO: Remove this click listener when the tileset is removed
+    const mapClick$ = new Observable((observer: any) => {
+      _map.on('click', _source, (e) => observer.next(e));
+    });
+
+    const subscription = mapClick$
+      .pipe(
+        filter(() => _map.getZoom() >= 12),
+        filter(() => {
+          if (source.toLowerCase().includes('esurvey')) {
+            return true;
+          }
+          return !this.SharedStateService.isEsurveyVisible;
+        }),
+        map((e: any) => {
+// Stopping the evnt bubbling
