@@ -359,3 +359,6 @@ source;
       UtilityService.preparePopup(popupHtml, popupDiv!);
   
 ludes(this.SharedStateService.combinedTilesetNames)) {
+        e.defaultPrevented;
+      }
+ });
