@@ -785,3 +785,17 @@ popupDiv!);
       maxzoom: 22,
     });
 .name.includes('reval')) {
+      color = '#B87333';
+    }
+    map.addLayer({
+      id: tileset.name,
+      type: 'circle',
+      source: tileset.name,
+      'source-layer': tileset.name,
+      paint: {
+        'circle-radius': 4,
+        'circle-color': color,
+        'circle-opacity': 1,
+      },
+      layout: {
+lity: tileset.visible ? 'visible' : 'none',
