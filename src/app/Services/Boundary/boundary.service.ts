@@ -362,3 +362,39 @@ ludes(this.SharedStateService.combinedTilesetNames)) {
         e.defaultPrevented;
       }
  });
+  }
+  AddGeoJsonLayer(source: Tileset, zoomLevel: number, map: mapboxgl.Map) {
+    this.layerService.AddFillLayer(source, map);
+    this.layerService.AddLineLayer(source, map);
+   // this.layerService.AddHoverLayer(source, map);
+    // add layer on click
+    this.addLayerOnclick(source, zoomLevel, map);
+  }
+
+  addLayerOnclick(tileset: Tileset, zoomLevel: number, map: mapboxgl.Map) {
+    const _source = 'fill' + tileset.name;
+
+    this._clickHandler = (e) => {
+      if (map.getZoom() > 5 && tileset.name == 'Country') {
+        return;
+      }
+      if (e['stopProp'] == true) {
+        const properties = e.features![0].properties;
+        const boundary = properties!['id'];
+        // this.clickedBoundaryId.next(boundary);
+        this.SharedStateService.updateClickedBoundaryId(boundary);
+        return;
+      }
+      e.originalEvent.preventDefault();
+
+      map.flyTo({
+        center: e.lngLat,
+        zoom: zoomLevel,
+      });
+
+      map.getCanvas().style.cursor = 'pointer';
+      const properties = e.features![0].properties;
+      const boundary = properties!['id'];
+
+      this.SharedStateService.updateClickedBoundaryId(boundary);
+ClickedBoundaryName(
