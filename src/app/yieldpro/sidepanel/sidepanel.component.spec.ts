@@ -20,3 +20,12 @@ Each(() => {
   });
 });
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { SidepanelComponent } from './sidepanel.component';
+
+describe('SidepanelComponent', () => {
+  let component: SidepanelComponent;
+  let fixture: ComponentFixture<SidepanelComponent>;
+
+  beforeEach(() => {
+ed.configureTestingModule({
