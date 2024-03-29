@@ -398,3 +398,11 @@ ludes(this.SharedStateService.combinedTilesetNames)) {
 
       this.SharedStateService.updateClickedBoundaryId(boundary);
 ClickedBoundaryName(
+        properties!['Boundary Name']
+      );
+    };
+
+    // Use the property to add the event
+    map.on('click', _source, this._clickHandler);
+  }
+ientCenter() {
