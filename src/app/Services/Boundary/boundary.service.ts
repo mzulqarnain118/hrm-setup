@@ -406,3 +406,21 @@ ClickedBoundaryName(
     map.on('click', _source, this._clickHandler);
   }
 ientCenter() {
+    return this.currentClientCenter;
+  }
+
+  hideBoundaryLayer(source: string, map: mapboxgl.Map) {
+    // return if layer doesn't exist
+    if (!map.getLayer('fill' + source)) {
+      return;
+    }
+    // set visibiliy to none
+    map.setLayoutProperty('fill' + source, 'visibility', 'none');
+    map.setLayoutProperty('polygons-line' + source, 'visibility', 'none');
+    //map.setLayoutProperty('polygons-line-hover' + source, 'visibility', 'none');
+  }
+
+
+  updateSourceBoundaries(zoom: number, map: mapboxgl.Map) {
+    this.allBoundarySources.forEach((source) => {
+ource(source, map);
