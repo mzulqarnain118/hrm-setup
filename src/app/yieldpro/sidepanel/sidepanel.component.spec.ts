@@ -29,3 +29,13 @@ describe('SidepanelComponent', () => {
 
   beforeEach(() => {
 ed.configureTestingModule({
+    imports: [SidepanelComponent]
+});
+    fixture = TestBed.createComponent(SidepanelComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
