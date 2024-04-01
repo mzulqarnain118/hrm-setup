@@ -24,3 +24,4 @@ export class SidepanelComponent {
       const reportType = target.value;
     }
 }
+import { Component } from '@angular/core';
