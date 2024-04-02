@@ -804,3 +804,19 @@ lity: tileset.visible ? 'visible' : 'none',
 
     map.moveLayer(tileset.name);
 map.on('mousemove', tileset.name, (e) => {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: [tileset.name],
+      });
+
+      // Check if there's at least one feature found.
+      if (features.length) {
+        const feature = features[0];
+
+        map.getCanvas().style.cursor = 'pointer';
+
+        // send data to hover
+        const properties = feature.properties;
+        const latLong = e.lngLat;
+        const obj = { lat: latLong.lat, lng: latLong.lng };
+        const currentBoundry = e.features![0].source;
+pupHtml: string = renderPopupHtml(
