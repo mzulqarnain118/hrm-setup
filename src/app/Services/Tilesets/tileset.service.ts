@@ -799,3 +799,8 @@ popupDiv!);
       },
       layout: {
 lity: tileset.visible ? 'visible' : 'none',
+      },
+    });
+
+    map.moveLayer(tileset.name);
+map.on('mousemove', tileset.name, (e) => {
