@@ -424,3 +424,35 @@ ientCenter() {
   updateSourceBoundaries(zoom: number, map: mapboxgl.Map) {
     this.allBoundarySources.forEach((source) => {
 ource(source, map);
+      //map.off('click', 'fill' + source, this._clickHandler);
+    });
+    this.allBoundarySources = [];
+  }
+
+  removeSource(source: string, map: mapboxgl.Map) {
+    if (map.getLayer('fill' + source)) {
+      console.log('removing source', source);
+      map
+        .removeLayer('fill' + source)
+        .removeLayer('polygons-line' + source)
+        // .removeLayer('polygons-line-hover' + source)
+        .removeSource(source);
+    }
+  }
+  storeAOIcenter(data: any) {
+    this.currentClientCenter =
+      UtilityService.calculateCenterForFeatureCollection(data);
+  }
+
+  async getSourceGeoJson(
+    source: string,
+    currentSeason: string,
+    ReportType: string,
+    currentDate: string,
+    currentCrop: string
+  ): Promise<GeoJSON.FeatureCollection<GeoJSON.Geometry>> {
+    if (source === 'Country') {
+      return JSON.parse(JSON.stringify(PAKISTAN_BOUNDS));
+    }
+    return (await this.backendService.getGeojson(
+e,
