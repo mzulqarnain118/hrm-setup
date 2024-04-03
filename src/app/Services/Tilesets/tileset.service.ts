@@ -820,3 +820,51 @@ map.on('mousemove', tileset.name, (e) => {
         const obj = { lat: latLong.lat, lng: latLong.lng };
         const currentBoundry = e.features![0].source;
 pupHtml: string = renderPopupHtml(
+          properties,
+          currentBoundry,
+          obj
+        );
+        UtilityService.preparePopup(popupHtml, popupDiv);
+      }
+
+      e['stopProp'] = true;
+    });
+
+    // Add on click event
+    map.on('click', tileset.name, (e) => {
+      const features = map.queryRenderedFeatures(e.point, {
+        layers: [tileset.name],
+      });
+
+      // Check if there's at least one feature found.
+      if (features.length) {
+        const feature = features[0];
+        const properties = feature.properties;
+        const latLong = e.lngLat;
+        const obj = { lat: latLong.lat, lng: latLong.lng };
+        const currentBoundry = e.features![0].source;
+        const popupHtml: string = renderPopupHtml(
+          properties,
+          currentBoundry,
+          obj
+rvice.preparePopup(popupHtml, popupDiv);
+      }
+
+      e['stopProp'] = true;
+    });
+  }
+
+  removeTilesets(tilesets: Tileset[], map: mapboxgl.Map) {
+    console.log('removing tilesets', tilesets);
+    if (!tilesets) {
+      return;
+    }
+    tilesets.forEach((tileset) => {
+      this.removeTileset(tileset as Tileset, map);
+    });
+  }
+
+  removeTileset(tileset: Tileset, map: mapboxgl.Map) {
+    this.VectorTilesetService.removeTileset(tileset, map);
+  }
+}
