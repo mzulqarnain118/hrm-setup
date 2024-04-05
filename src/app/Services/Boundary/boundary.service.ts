@@ -456,3 +456,59 @@ ource(source, map);
     }
     return (await this.backendService.getGeojson(
 e,
+      ReportType,
+      currentDate.split('T')[0],
+      currentCrop
+    )) as GeoJSON.FeatureCollection<GeoJSON.Geometry>;
+  }
+
+  // this is handling on click for every polygon of the boundary dataset right now
+  AddBoundaryLayer(source: string, zoomLevel: number, map: mapboxgl.Map) {
+    // If the source already exists then just change the visibility to visible
+    if (map.getLayer('fill' + source)) {
+      // if the layers of source exist just change visibility to visible
+      map.setLayoutProperty('fill' + source, 'visibility', 'visible');
+      map.setLayoutProperty('polygons-line' + source, 'visibility', 'visible');
+      // map.setLayoutProperty(
+      //   'polygons-line-hover' + source,
+      //   'visibility',
+      //   'visible'
+      // );
+      return;
+    }
+    const tileset: Tileset = {
+      name: source,
+      visible: true,
+      FillPrefix: 'fill',
+      LinePrefix: 'polygons-line',
+      HoverPrefix: 'polygons-line-hover',
+      TilesetType: 'Boundary',
+    };
+tely transparent fill
+    this.AddGeoJsonLayer(tileset, zoomLevel, map);
+  }
+
+  // flyToclientCentre
+  flyToClientCenter(map: mapboxgl.Map) {
+    if (!this.currentClientCenter) {
+      return;
+    }
+
+    map.flyTo({
+      center: this.currentClientCenter,
+      zoom: 5,
+    });
+  }
+
+getAoiAndStoreCenterasync() {
+     this.getSourceGeoJson(
+      'aoi',
+      this.SharedStateService.getCurrentSeasonValue(),
+      this.SharedStateService.getReportTypeValue(),
+      this.SharedStateService.getCurrentDateValue(),
+      this.SharedStateService.getCurrentCropValue()
+    ).then((data) => {
+      this.storeAOIcenter(data);
+    });
+  }
+}
