@@ -9,7 +9,7 @@ export class MemoizationService {
 
   memoize<T>(key: string, observable: Observable<T>): Observable<T> {
     if (!this.cache.has(key)) {
-cache.set(key, observable.pipe(shareReplay({ bufferSize: 1, refCount: true })));
+      this.cache.set(key, observable.pipe(shareReplay({ bufferSize: 1, refCount: true })));
     }
     return this.cache.get(key) as Observable<T>;
   }
