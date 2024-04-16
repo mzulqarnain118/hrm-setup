@@ -111,3 +111,4 @@ Polygon = geometry as turf.MultiPolygon;
 
   
 
+import { Injectable } from '@angular/core';
